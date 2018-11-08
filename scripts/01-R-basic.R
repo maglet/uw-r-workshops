@@ -9,7 +9,7 @@
 ############# The assignment operator (<-): storing values in variables ######################
 
 weight_kg <- 55    # doesn't print anything
-(weight_kg <- 55)  # but putting parenthesis around the call prints the value of `weight_kg`
+(weight_kg <- 53)  # but putting parenthesis around the call prints the value of `weight_kg`
 weight_kg          # and so does typing the name of the object
 
 ##### Example: unit conversions
@@ -38,11 +38,9 @@ round(3.14159, digits =2) #Rounds the output to 2 digits
 
 # Download the file (download.file is the function, the URL and destination file are arguments), 
           #no output
-download.file("http://bit.ly/2fBfHj4",  #URL
-              "data/portal_data_joined.csv")                     #destination file
 
 # Load the data into R (read.csv is the function, file name is the argument, output stored in surveys)
-surveys <- read.csv('data/portal_data_joined.csv')
+surveys <- read.csv('data/raw_surveys.csv')
 
 # Survey is a data frame:
 ### rows are observations
