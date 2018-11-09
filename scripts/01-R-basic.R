@@ -84,20 +84,38 @@ animals[c(3,2)] #displays the third and second elements ("dog", "rat")
 animals[c(1,2,3,2,1,4)]
 
 #Conditional Subsetting: subset by value, not position
-
+# use logical expressions (TRUE/FALSE)
 
 #with numbers
-weight_g > 50    # will return logicals with TRUE for the indices that meet the condition
+weight_g <- c(21, 34, 39, 54, 55) #weights
+weight_g>50  #evaluate each weight
+#FALSE, FALSE, FALSE, TRUE, TRUE
 
-weight_g <- c(21, 34, 39, 54, 55)
+#keeps trues
 weight_g[c(FALSE, FALSE, FALSE, TRUE, TRUE)]
+#same as
+weight_g[weight_g>50]
 
+#using boolean operators 
 weight_g[weight_g < 30 | weight_g > 50]
 weight_g[weight_g >= 30 & weight_g == 21]
 
 #with text
+animals <- c("mouse", "rat", "dog", "cat")
+
+#returns cat
+animals[animals == "cat"]
+
+# returns both rat and cat
+animals[animals == "cat" | animals == "rat"] 
+
+# the %in% operator
+
+
 
 #Missing data
+
+
 
 # Starting with data
 
