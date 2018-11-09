@@ -2,26 +2,27 @@
 #http://www.datacarpentry.org/R-ecology-lesson/01-intro-to-R.html
 #http://www.datacarpentry.org/R-ecology-lesson/02-starting-with-data.html
 
-############################## R can do math!#################################################
+# R can do math!
 3+5           #Prints 8 to the console
 12/7          #prints 1.714286 to the console
 
-############# The assignment operator (<-): storing values in variables ######################
+# The assignment operator (<-): storing values in variables
 
 weight_kg <- 55    # doesn't print anything
 (weight_kg <- 53)  # but putting parenthesis around the call prints the value of `weight_kg`
 weight_kg          # and so does typing the name of the object
 
-##### Example: unit conversions
+# Example: unit conversions
 weight_kg*2.2               #Output the weight in pounds to the console
 weight_kg<-57.5             #Values of variables can be changed
 weight_lb<-weight_kg*2.2    #Results of calculations can be assigned to new variables
 
-############################## Functions and their arguments #################################
-### Functions have:
-###### Arguments - what they need to "know" to run that function; aka input; isn't modified
-###### Output - the result of whatever the function does; default is output to the console, 
-######           can be assigned to variables; 
+# Functions and their arguments 
+## Functions have:
+#   - Names
+#   - Arguments - what they need to "know" to run that function; aka input; isn't modified
+#   - Output - the result of whatever the function does; default is output to the console, 
+#              can be assigned to variables; 
 
 a<-9                 #assigns the value 9 to the variable a
 b<-sqrt(a)           # sqrt is the function; value of a is the argument; output is assigned to b
@@ -34,7 +35,71 @@ args(round)          #lists the argument of the round function to the console
 
 round(3.14159, digits =2) #Rounds the output to 2 digits
 
-########################### Starting with data ########################################
+# Vectors and datatypes
+#   Vectors allow you to assign multiple values to one variable
+
+weight_g<-c(50,60,65,82) #vector of numbers
+animals<-c("mouse", "rat", "dog") #vector of strings
+
+
+# Inspecting vectors
+
+#how many values are in the vector?
+length(weight_g)
+length(animals)
+
+#What type of values are in the vector?
+class(weight_g)
+class(animals)
+
+# class, length, values
+str(weight_g)
+str(animals)
+
+#adding to a vector
+weight_g <- c(weight_g, 90) # add to the end of the vector
+weight_g <- c(30, weight_g) # add to the beginning of the vector
+weight_g
+
+#Exercise: Class coercion - What types are these vectors?
+  
+num_char <- c(1, 2, 3, "a")
+num_logical <- c(1, 2, 3, TRUE)
+char_logical <- c("a", "b", "c", TRUE)
+tricky <- c(1, 2, 3, "4")
+
+#Hint: use class()
+
+#Subsetting vectors
+
+#specify the index with square brackets
+
+animals<-c("mouse", "rat", "dog", "cat")
+animals[2] #displays the second element ("rat")
+
+#can specify more than one element
+animals[c(3,2)] #displays the third and second elements ("dog", "rat")
+
+#can reuse elements, make longer vectors
+animals[c(1,2,3,2,1,4)]
+
+#Conditional Subsetting: subset by value, not position
+
+
+#with numbers
+weight_g > 50    # will return logicals with TRUE for the indices that meet the condition
+
+weight_g <- c(21, 34, 39, 54, 55)
+weight_g[c(FALSE, FALSE, FALSE, TRUE, TRUE)]
+
+weight_g[weight_g < 30 | weight_g > 50]
+weight_g[weight_g >= 30 & weight_g == 21]
+
+#with text
+
+#Missing data
+
+# Starting with data
 
 # Download the file (download.file is the function, the URL and destination file are arguments), 
           #no output
