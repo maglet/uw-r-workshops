@@ -17,6 +17,15 @@ weight_kg*2.2               #Output the weight in pounds to the console
 weight_kg<-57.5             #Values of variables can be changed
 weight_lb<-weight_kg*2.2    #Results of calculations can be assigned to new variables
 
+## Exercise: operators
+#### What are the values of each variable after each statement in the following?
+
+mass <- 47.5            # mass?
+age  <- 122             # age?
+mass <- mass * 2.0      # mass?
+age  <- age - 20        # age?
+mass_index <- mass/age  # mass_index?
+
 # Functions and their arguments 
 ## Functions have:
 #   - Names
@@ -88,11 +97,11 @@ animals[c(1,2,3,2,1,4)]
 
 #with numbers
 weight_g <- c(21, 34, 39, 54, 55) #weights
-weight_g>50  #evaluate each weight
+weight_tf<-weight_g>50  #evaluate each weight
 #FALSE, FALSE, FALSE, TRUE, TRUE
 
 #keeps trues
-weight_g[c(FALSE, FALSE, FALSE, TRUE, TRUE)]
+weight_g[weight_tf]
 #same as
 weight_g[weight_g>50]
 
@@ -111,16 +120,28 @@ animals[animals == "cat" | animals == "rat"]
 
 # the %in% operator
 
+#TRUE if value is in the right hand vector, FALSE otherwise
+animals %in% c("rat", "cat", "dog", "duck", "goat")
 
+#animals that are rats, cats, dogs, ducks or goats
+animals[animals %in% c("rat", "cat", "dog", "duck", "goat")]
 
-#Missing data
+#Missing data: NA makes it harder to overlook missing data 
+heights <- c(2, 4, 4, NA, 6)
+mean(heights)
 
+mean(heights, na.rm = TRUE)
 
+## Extract those elements which are not missing values.
+heights[!is.na(heights)]
+
+## Returns the object with incomplete cases removed. The returned object is an atomic vector of type `"numeric"` (or `"double"`).
+na.omit(heights)
+
+## Extract those elements which are complete cases. The returned object is an atomic vector of type `"numeric"` (or `"double"`).
+heights[complete.cases(heights)]
 
 # Starting with data
-
-# Download the file (download.file is the function, the URL and destination file are arguments), 
-          #no output
 
 # Load the data into R (read.csv is the function, file name is the argument, output stored in surveys)
 surveys <- read.csv('data/raw_surveys.csv')
@@ -139,22 +160,12 @@ ncol(surveys) #= number of columns
 names(surveys) #= column names
 summary(surveys) #= does summary stats for each column
 
-# Data types
-### R guesses what type of data is in each column based on what's there (numeric or factor mostly)
-### numeric = numbers
-### factors = numbers with text labels (more on this later)
-### If R guesses wrong, you can change it
-
-surveys$record_id<-as.factor(surveys$record_id)  # converts the record id to a factor
-surveys$record_id<-as.numeric(surveys$record_id) # if you convert it back to numeric, you get the 
-                                                 # 1, 2, 3, 4 values, and you lose the text labels
-
-nums<-c(1, 2, 3, "hi") # Created a column with mixed text and numbers
-class(nums)            #converts the numbers to a character
-
-ch<-as.numeric(nums)   # Convert the character vector to numeric, gets warning
-ch                     # "hi" gets converted to NA because it can't be interpreted as a number
-
+#Exercise: inspecting data frames
+#Based on the output of str(surveys), can you answer the following questions?
+ # What is the class of the object surveys?
+ # How many rows and how many columns are in this object?
+ # How many species have been recorded during these surveys?
+  
 ################################## Subsetting ######################################################
 
 ############ With Bracets
@@ -185,6 +196,15 @@ surveys[["species_id"]]            # Result is a vector
 
 dollar<-as.data.frame(dollar)      # Convertng a vector to a data.frame
 
+
+# Exercise: Subsetting
+#Create a data frame (surveys_200) containing only the observations from rows 1 to 200 of the surveys dataset.
+
+#Use nrow() to subset the last row in surveys_200.
+
+#Use nrow() to extract the row that is in the middle surveys_200. Store in a variable called surveys_mid
+
+
 ######################################## Factors ######################################
 
 # Create a factor variable
@@ -204,11 +224,18 @@ sex <- factor(sex, levels = c("male", "female"))
 ############ Plotting with factors
 
 plot(surveys$sex)                          # Makes a bar graph with charts
-levels(surveys$sex)[1] <- "missing"        # change the first label to “missing”
 
+##Renaming levels
+sex <- surveys$sex 			       # subset the column
+head(sex)				               # look at first 6 records
+levels(sex)				               # look at the factor levels
+levels(sex)[1] <- "missing" 		# change the first label to “missing”
+levels(sex)				              # look at factor levels again
+head(sex)				              # see where missing values were
+
+#Preventing factors
 ## Compare the difference between when the data are being read as 
 ## `factor`, and when they are being read as `character`. 
-
 surveys <- read.csv("data/portal_data_joined.csv", 
                     stringsAsFactors = TRUE) 
 str(surveys) 
@@ -217,13 +244,7 @@ surveys <- read.csv("data/portal_data_joined.csv",
                     stringsAsFactors = FALSE) 
 str(surveys) 
 
-## Convert the column "plot_type" into a factor 
-plot(surveys$plot_id) #plots value by index
 
-#convert from numeric to factor
-surveys$plot_type <- factor(surveys$plot_type)
-
-plot(surveys$plot_id) #plots count of each factor
 
 #### Write data to a new file
 surveys200<-surveys[1:200,]
