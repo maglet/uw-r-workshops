@@ -6,7 +6,11 @@
 #install.packages("tidyverse")
 library("tidyverse")
 
-surveys <- read_csv('data/portal_data_joined.csv')
+surveys_dot <- read.csv('data/raw_surveys.csv')
+surveys_dot
+str(surveys_dot)
+
+surveys <- read_csv('data/raw_surveys.csv')
 surveys
 str(surveys)
 
