@@ -7,10 +7,10 @@ These workshops will be held biweekly on Fridays from 10 am to 12 pm in Steenboc
 Title | Date
 ------|-------------------------------
 [R basics](https://researchguides.library.wisc.edu/R/basics)|2/15/2019
-R data wrangling|3/01/2019
-R visualization|3/15/2019
-R version control|3/29/2019
-R reports|4/12/2019
+[R data wrangling](https://researchguides.library.wisc.edu/R/tidyverse)|3/01/2019
+[R visualization](https://researchguides.library.wisc.edu/R/tidyverse)|3/15/2019
+[R version control](https://researchguides.library.wisc.edu/R/tidyverse)|3/29/2019
+[R reports](https://researchguides.library.wisc.edu/R/tidyverse)|4/12/2019
 
 ## Content
 Workshop slides and other content can be found [here](https://researchguides.library.wisc.edu/R)
