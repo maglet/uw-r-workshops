@@ -54,24 +54,21 @@ mutate(surveys, weight_kg = weight/1000)
 surveys %>%
        mutate(weight_kg = weight / 1000)
 
+# add 2 new columns at once
 surveys %>%
        mutate(weight_kg = weight / 1000, 
               weight_kg2 = weight_kg *2)
 
-surveys %>%
-       mutate(weight_kg = weight / 1000) %>%
-       head
+# remove missing values
 
 surveys %>%
        filter(!is.na(weight)) %>%
-       mutate(weight_kg = weight / 1000)%>%
-       head
+       mutate(weight_kg = weight / 1000)
 
 #removing missing values
 surveys %>%
        filter(!is.na(weight)) %>%
-       mutate(weight_kg = weight / 1000)%>%
-       head
+       mutate(weight_kg = weight / 1000)
 
 ##### Exercise 2 
 #Create a new data frame from the survey data that meets the following criteria: 
@@ -87,39 +84,57 @@ surveys%>%
 
 #Split-apply-combine with summarize
 
+# create a summary of the weight variable
 surveys %>%
        summarize(mean_weight = mean(weight, na.rm = TRUE))
+#not very informative w/o group by
 
+#group by then summarize creats a summary table
 grouped_surveys<-surveys %>%
        group_by(sex) %>%
        summarize(mean_weight = mean(weight, na.rm = TRUE))
 
+#group by multiple variables
 surveys %>%
        group_by(sex, species_id) %>%
        summarize(mean_weight = mean(weight, na.rm = TRUE))
 
+#remove missing data with is.na
 surveys %>%
        filter(!is.na(weight)) %>%
        group_by(sex, species_id) %>%
        summarize(mean_weight = mean(weight))
 
-surveys %>%
-       filter(!is.na(weight)) %>%
-       group_by(sex, species_id) %>%
-       summarize(mean_weight = mean(weight)) %>%
-       print(n = 15)
-
+#calculate  multiple summary statistics
 surveys %>%
        filter(!is.na(weight)) %>%
        group_by(sex, species_id) %>%
        summarize(mean_weight = mean(weight),
                  min_weight = min(weight))
 
-#Tally
+#Counting observations in categories
 
-surveys %>%
-       group_by(sex) %>%
-       tally
+# count observation in each category
+surveys %>% 
+  count(sex)
+
+#Same as
+surveys %>% 
+  group_by(sex) %>% 
+  summarize(count = n)
+
+# group by multiple variables
+surveys %>% 
+  count(sex,  species)
+
+#sort by 2 things
+surveys %>% 
+  count(sex,  species) %>%
+  arrange(species, #alphabetical
+          desc(n)) #descending
+
+
+
 
 ################################# Exercise 3 ####################################################################
 #How many individuals were caught in each plot_type surveyed?
@@ -130,8 +145,7 @@ surveys %>%
 
 #Individuals per plot type
 surveys %>%
-       group_by(plot_type)%>%
-       tally
+       count(plot_type)
 
 #hfl by species
 surveys %>%
@@ -180,32 +194,19 @@ surveys_spread %>%
        head()
 
 ################### Exercise 4
-#Goal: look at the relationship between mean values of weight and hindfoot 
-#length per year in different plot types. 
+#Spread the surveys data frame with year as columns, plot_id as rows, and the number of genera per plot as the values. Hints: 
+ # 1. Summarize before reshaping
+## use the function n_distinct() to get the number of unique genera 
 
-#Step 1: Use gather() to create a dataset where we have a key column called 
-#measurement and a value column that takes on the value of either 
-#hindfoot_length or weight. 
+ex4<-surveys %>%
+  group_by(plot_id, year)%>%
+  summarize(genera=n_distinct(genus))%>%
+  spread(key = year, value = genera)
 
-long_data<-surveys%>%
-       gather(key = measurement, #new col from col headers
-              value = value,     #values
-              hindfoot_length, weight) #columns to gather
+# 2. Now take that data frame and gather() it again, so each row is a unique plot_id by year combination.
 
-#Step 2: Calculate the average of each measurement in each year 
-#for each different plot_type. 
-
-mean_values<-long_data %>%
-       filter(!is.na(value))%>%
-       group_by(measurement, plot_type, year)%>%
-       summarise(mean = mean(value))
-       
-#Step 3: spread() them into a data set with a column 
-#for hindfoot_length and weight. 
-
-mean_values%>%
-       spread(key = measurement, 
-              value = mean)
+ex4 %>% 
+  gather(key = year, value =  n, "1977":"2002")
 
 ########################### Data Cleaning ################################################################
 surveys_complete <- surveys %>% 
