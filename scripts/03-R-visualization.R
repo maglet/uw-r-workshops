@@ -121,12 +121,17 @@ ggplot(data = surveys_complete,
        geom_boxplot()
 
 # Overlay points on a boxplot
-ggplot(data = surveys_complete, aes(x = species_id, y = hindfoot_length)) +
+ggplot(data = surveys_complete, 
+       aes(x = species_id, 
+           y = hindfoot_length)) +
        geom_boxplot() +
        geom_jitter(alpha = 0.3, 
                    color = "tomato")
 
-ggplot(data = surveys_complete, aes(x = species_id, y = hindfoot_length)) +
+#order is important
+ggplot(data = surveys_complete, 
+       aes(x = species_id, 
+           y = hindfoot_length)) +
   geom_jitter(alpha = 0.3, 
               color = "tomato")+
   geom_boxplot() 
@@ -140,29 +145,33 @@ ggplot(data = surveys_complete, aes(x = species_id, y = hindfoot_length)) +
 ################### Time series data ###########################################
 #reshape the data
 yearly_counts <- surveys_complete %>%
-       group_by(year, species_id) %>%
-       tally
+  count(year, species_id)
 
 
 # Output: a data frame with year, species_id and n, where n is the number
 #         of observations of a species in a given year
 
 #Plot n vs. year
-ggplot(data = yearly_counts, aes(x = year, # year on the x axis
-                                 y = n)) + # n on the y axis
+ggplot(data = yearly_counts, 
+       aes(x = year, # year on the x axis
+           y = n)) + # n on the y axis
        geom_line()
 #Combines number of all species into one line
 
 #One line for each species
 ggplot(data = yearly_counts, 
-       aes(x = year, y = n, 
+       aes(x = year, 
+           y = n, 
            group = species_id)) +  # make a new line for each species id
        geom_line()
 
 # add color by species
-ggplot(data = yearly_counts, aes(x = year, y = n, group = species_id, 
-                                 color = species_id)) + # add color to create legend
+ggplot(data = yearly_counts, 
+       aes(x = year, 
+           y = n,
+           color = species_id)) + # add color to create legend
        geom_line()
+
 
 #################### Exercise 3 ################################################
 #Use what you just learned to create a plot that depicts how the average 
