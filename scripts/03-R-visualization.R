@@ -2,46 +2,77 @@
 ####  http://www.datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html
 
 # plotting package
-library(ggplot2)
-# modern data frame manipulations
-library(dplyr)
-library(readr)
+library(tidyverse)
 
 ################## Load data ###################################################
-surveys_complete <- read_csv('data/surveys_complete.csv')
+surveys_complete <- read_csv('data/complete_surveys.csv')
 
 ###################### Scatterplots  ###########################################
 #Basic graph elements
-# Step 1: specify the data to be plotted
-ggplot(data = surveys_complete)
-#opens a plot window, but doesn't graph anything
 
-# Step 2: specify what to put on each axis
-ggplot(data = surveys_complete, aes(x = weight, y = hindfoot_length))
-#opens a plot window and draws axes
+# the simplest ggplot: data, aesthetic mappings, and geometry
+ggplot(data = surveys_complete, 
+       aes(x = weight, 
+           y = hindfoot_length)) + 
+  geom_point()
+
+# Break it down into component parts
+
+# Step 1: Initialize the plot
+  #- specify data
+  #- creates a blank plot
+
+ggplot(data = surveys_complete)
+
+# Step 2: specify variales on each axis
+  #- specify the "aesthetic mappings"
+  #- start with the aes function
+  #-opens a plot window and draws axes
+
+ggplot(data = surveys_complete, 
+       mapping = aes(x = weight, 
+                     y = hindfoot_length))
+
 
 # Step 3: specify the geometry 
-ggplot(data = surveys_complete, aes(x = weight, y = hindfoot_length)) + 
-       geom_point()
-#opens a plot window, draws axes, and draw points for each row of the data frame
+  #- use a geom function to specify how the data should be plotted
+  # "add" aesthetics to the ggplot function with + operator
+  # whitespace matters here 
+  # adds data points to the plot
+
+ggplot(data = surveys_complete, 
+       x = weight, 
+       y = hindfoot_length) + 
+  geom_point()
+
+# Adding arguments to the geom to change appearance:
 
 # Add transparency with the alpha argument to geom_pont
-ggplot(data = surveys_complete, aes(x = weight, y = hindfoot_length)) +
+ggplot(data = surveys_complete, 
+       aes(x = weight, 
+           y = hindfoot_length)) +
        geom_point(alpha = 0.1)
 
 # Add color with the color argument to geom_point
-ggplot(data = surveys_complete, aes(x = weight, y = hindfoot_length)) +
-       geom_point(alpha = 0.1, color = "blue")
+ggplot(data = surveys_complete, 
+       aes(x = weight, 
+           y = hindfoot_length)) +
+       geom_point(alpha = 0.1, 
+                  color = "blue")
 
 # Add color by species with color argument to aes
-ggplot(data = surveys_complete, aes(x = weight, y = hindfoot_length)) +
-       geom_point(alpha = 0.1, aes(color=species_id))
+ggplot(data = surveys_complete, 
+       aes(x = weight, 
+           y = hindfoot_length)) +
+       geom_point(alpha = 0.1, 
+                  aes(color=species_id))
 #aes in geom_point specifies only for the point
 
 # aes argument to ggplot specifies for the whole graph, 
-ggplot(data = surveys_complete, aes(x = weight, 
-                                    y = hindfoot_length, 
-                                    color=species_id)) +
+ggplot(data = surveys_complete, 
+       aes(x = weight,
+           y = hindfoot_length,
+           color=species_id)) +
        geom_point(alpha = 0.1)
 
 ################## Exercise 1 #################################################
@@ -53,22 +84,56 @@ ggplot(data = surveys_complete, aes(x = weight,
 #Hint: Check the class for plot_id. Consider changing the class of plot_id from 
 #integer to factor. Why does this change how R makes the graph?
 
+#creates a color gradient because plot_id is a number, not character
+ggplot(data = surveys_complete, 
+       aes(x = weight,
+           y = hindfoot_length,
+           color=plot_id)) +
+  geom_point(alpha = 0.1)
 
-############## Boxplots ###################################################
+#you can tell ggplot to read it as a character rather than a number
+# using as.character
+ggplot(data = surveys_complete, 
+       aes(x = weight,
+           y = hindfoot_length,
+           color=as.character(plot_id))) +
+  geom_point(alpha = 0.1)
+
+
+############## plotting categorical variables
+
+ggplot(data = surveys_complete, 
+       aes(x = species_id,         # factor variable
+           y = hindfoot_length)) + # numeric variable
+  geom_point()
+
+# try a new geom: geom_jitter()
+ggplot(data = surveys_complete, 
+       aes(x = species_id,         # factor variable
+           y = hindfoot_length)) + # numeric variable
+  geom_jitter(alpha = 0.1)
+
+
 # Make a boxplot 
-ggplot(data = surveys_complete, aes(x = species_id,         # factor variable
-                                    y = hindfoot_length)) + # numeric variable
+ggplot(data = surveys_complete, 
+       aes(x = species_id,         # factor variable
+           y = hindfoot_length)) + # numeric variable
        geom_boxplot()
 
 # Overlay points on a boxplot
 ggplot(data = surveys_complete, aes(x = species_id, y = hindfoot_length)) +
-       geom_boxplot(alpha = 0) +
+       geom_boxplot() +
        geom_jitter(alpha = 0.3, 
                    color = "tomato")
 
+ggplot(data = surveys_complete, aes(x = species_id, y = hindfoot_length)) +
+  geom_jitter(alpha = 0.3, 
+              color = "tomato")+
+  geom_boxplot() 
+
 ################### Exercise 2 #################################################
 # Plot the same data as in the previous example, but as a Violin plot
-# Hint: see geom_violin().
+# Hint: see geom_violin().
 
 # What information does this give you about the data that a box plot does?
 
@@ -77,6 +142,8 @@ ggplot(data = surveys_complete, aes(x = species_id, y = hindfoot_length)) +
 yearly_counts <- surveys_complete %>%
        group_by(year, species_id) %>%
        tally
+
+
 # Output: a data frame with year, species_id and n, where n is the number
 #         of observations of a species in a given year
 
