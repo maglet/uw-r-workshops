@@ -7,7 +7,7 @@ library(tidyverse)
 ################## Load data ###################################################
 surveys_complete <- read_csv('data/complete_surveys.csv')
 
-###################### Scatterplots  ###########################################
+## Plotting numerical data 
 #Basic graph elements
 
 # the simplest ggplot: data, aesthetic mappings, and geometry
@@ -98,9 +98,9 @@ ggplot(data = surveys_complete,
            y = hindfoot_length,
            color=as.character(plot_id))) +
   geom_point(alpha = 0.1)
+###############################################################################
 
-
-############## plotting categorical variables
+## plotting categorical variables
 
 ggplot(data = surveys_complete, 
        aes(x = species_id,         # factor variable
@@ -136,13 +136,20 @@ ggplot(data = surveys_complete,
               color = "tomato")+
   geom_boxplot() 
 
-################### Exercise 2 #################################################
+################### Exercise 2 ############################################
 # Plot the same data as in the previous example, but as a Violin plot
 # Hint: see geom_violin().
 
 # What information does this give you about the data that a box plot does?
 
-################### Time series data ###########################################
+ggplot(data = surveys_complete, 
+       aes(x = species_id, 
+           y = hindfoot_length)) +
+  geom_violin() 
+
+###########################################################################
+
+## Time series data 
 #reshape the data
 yearly_counts <- surveys_complete %>%
   count(year, species_id)
@@ -172,61 +179,69 @@ ggplot(data = yearly_counts,
            color = species_id)) + # add color to create legend
        geom_line()
 
+# Save your plot to a variable
+lineplot<- ggplot(data = yearly_counts, 
+                  aes(x = year, 
+                      y = n, 
+                      color = sex))
 
-#################### Exercise 3 ################################################
+
+#################### Exercise 3 #########################################
 #Use what you just learned to create a plot that depicts how the average 
 #weight of each species changes through the years.
 
+yearly_weights<-surveys_complete%>%
+  group_by(species_id, year)%>%
+  summarize(mean_wt = mean(weight))
 
-################### Using pre-made themes ######################################
+ggplot(data = yearly_weights, 
+       aes(x = year, y = mean_wt))+ 
+  geom_line(aes(color = species_id))
+##########################################################################
+
+# Making publication quality plots
+
+##  Using pre-made themes 
 
 #Apply a theme
-ggplot(data = yearly_counts, aes(x = year, y = n, color = species_id)) +
-       geom_line() +
+lineplot_bw <- lineplot +
        theme_bw()          # see ?theme_bw for this and other themes
 
-################ Customizing themes ############################################
+## Customizing themes 
 
 #Change axis labels and titles
-ggplot(data = yearly_counts, aes(x = year, y = n, color = species_id)) +
-       geom_line() +
-       labs(title = 'Species count over time',
-            x = 'Year of observation',
-            y = 'Count') +
-       theme_bw()
+line_bw_lab<-lineplot_bw +
+  labs(title = 'Species count over time',
+       x = 'Year of observation',
+       y = 'Count') 
 
 #Change font size
-ggplot(data = yearly_counts, aes(x = year, y = n, color = species_id)) +
-       geom_line() +
-       labs(title = 'Species count over time',
-            x = 'Year of observation',
-            y = 'Count') +
-       theme_bw() +
-       theme(text=element_text(size=16, family="Arial"))
+line_bw_labs_font<-line_bw_labs + 
+       theme(text=element_text(size=16, 
+                               family="Arial"))
 
-#################### Save a customized theme ###################################
-arial_theme <- theme_bw() + theme(text=element_text(size=16, family="Arial"))
+# Save a customized theme 
+arial_theme <- theme_bw() + 
+  theme(text=element_text(size=16, 
+                          family="Arial"))
 
 #Apply saved theme
-ggplot(surveys_complete, aes(x = species_id, y = hindfoot_length)) +
+ggplot(surveys_complete, 
+       aes(x = species_id, y = hindfoot_length)) +
        geom_boxplot() +
        arial_theme
 
-##################### Save your plot ###########################################
+## Save your plot 
 
-#save plot to a variable
-my_plot <- ggplot(data = yearly_counts, aes(x = year, y = n, color = species_id)) +
-       geom_line() +
-       labs(title = 'Observed species in time',
-            x = 'Year of observation',
-            y = 'Number of species') +
-       theme_bw() +
-       theme(axis.text.x = element_text(colour="grey20", size=12, angle=90, 
-                                        hjust=.5, vjust=.5),
-             axis.text.y = element_text(colour="grey20", size=12),
-             text=element_text(size=16, family="Arial"))
+ggsave( filename = "name.png",
+        plot = line_bw_labs_font,        #last plot by default
+        device = "png",                  #default
+        units = "in",                    #default 
+        width = 15, 
+        height = 10)
 
-# save plot to a file
-ggsave("name_of_file.png", my_plot, width=15, height=10)
-
-###################### FIN #####################################################
+# same as 
+ggsave("name.png", 
+       line_bw_labs_font, 
+       width=15, 
+       height=10)
