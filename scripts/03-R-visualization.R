@@ -182,8 +182,8 @@ ggplot(data = yearly_counts,
 # Save your plot to a variable
 lineplot<- ggplot(data = yearly_counts, 
                   aes(x = year, 
-                      y = n, 
-                      color = sex))
+                      y = n))+
+  geom_line(aes(color = species_id))
 
 
 #################### Exercise 3 #########################################
@@ -216,7 +216,7 @@ line_bw_lab<-lineplot_bw +
        y = 'Count') 
 
 #Change font size
-line_bw_labs_font<-line_bw_labs + 
+line_bw_lab_font<-line_bw_lab + 
        theme(text=element_text(size=16, 
                                family="Arial"))
 
@@ -226,12 +226,22 @@ arial_theme <- theme_bw() +
                           family="Arial"))
 
 #Apply saved theme
-ggplot(surveys_complete, 
-       aes(x = species_id, y = hindfoot_length)) +
-       geom_boxplot() +
-       arial_theme
+box_arial<-ggplot(surveys_complete, 
+                  aes(x = species_id, y = hindfoot_length)) +
+  geom_boxplot() +
+  arial_theme
 
-## Save your plot 
+# Arrange plots
+
+library(gridExtra)
+
+grid.arrange(line_bw_lab_font, 
+             box_arial,
+             ncol = 2, 
+             widths = c(4, 6))
+
+
+# Save your plot 
 
 ggsave( filename = "name.png",
         plot = line_bw_labs_font,        #last plot by default
