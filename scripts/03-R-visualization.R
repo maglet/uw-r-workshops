@@ -207,6 +207,7 @@ ggplot(data = yearly_weights,
 lineplot_bw <- lineplot +
        theme_bw()          # see ?theme_bw for this and other themes
 
+lineplot_bw
 ## Customizing themes 
 
 #Change axis labels and titles
@@ -215,10 +216,25 @@ line_bw_lab<-lineplot_bw +
        x = 'Year of observation',
        y = 'Count') 
 
+line_bw_lab
+
 #Change font size
 line_bw_lab_font<-line_bw_lab + 
        theme(text=element_text(size=16, 
                                family="Arial"))
+
+line_bw_lab_font
+
+#If you get warnings here, you may need to use the extrafont 
+#library to install fonts. (Win 10)
+
+#From: https://www.r-bloggers.com/using-arial-in-r-figures-destined-for-plos-one/
+
+#install.packages("extrafont")
+#library(extrafont)
+
+#font_import() #import your Windows system fonts into R
+#fonts() #check what's installed
 
 windowsFonts("Arial" = windowsFont("Arial"))
 # Save a customized theme 
@@ -231,6 +247,8 @@ box_arial<-ggplot(surveys_complete,
                   aes(x = species_id, y = hindfoot_length)) +
   geom_boxplot() +
   arial_theme
+
+box_arial
 
 # Arrange plots
 
@@ -298,6 +316,4 @@ ggplot(data = yearly_sex_weight,
 ggplot(data = yearly_sex_weight,
        aes(x = year, y = avg_weight)) +
   geom_line() +
-  facet_grid(species_id~sex)
-
-
+  facet_grid(sex~species_id)
