@@ -220,10 +220,11 @@ line_bw_lab_font<-line_bw_lab +
        theme(text=element_text(size=16, 
                                family="Arial"))
 
+windowsFonts("Arial" = windowsFont("Arial"))
 # Save a customized theme 
 arial_theme <- theme_bw() + 
   theme(text=element_text(size=16, 
-                          family="Arial"))
+                          family="TT Arial"))
 
 #Apply saved theme
 box_arial<-ggplot(surveys_complete, 
@@ -244,7 +245,7 @@ grid.arrange(line_bw_lab_font,
 # Save your plot 
 
 ggsave( filename = "name.png",
-        plot = line_bw_labs_font,        #last plot by default
+        plot = line_bw_lab_font,        #last plot by default
         device = "png",                  #default
         units = "in",                    #default 
         width = 15, 
@@ -252,6 +253,51 @@ ggsave( filename = "name.png",
 
 # same as 
 ggsave("name.png", 
-       line_bw_labs_font, 
+       line_bw_lab_font, 
        width=15, 
        height=10)
+
+#Bonus: Facets!
+
+#Make a plot for each species_id
+ggplot(data = yearly_counts,
+       aes(x = year, y = n)) +
+  geom_line() +
+  facet_wrap(~species_id)
+
+#add the sex variable to the table
+yearly_sex_counts <- surveys_complete %>%
+  count(year, species_id, sex)
+
+#color by sex
+ggplot(data = yearly_sex_counts, 
+       mapping = aes(x = year, 
+                     y = n, 
+                     color = sex)) +
+  geom_line() +
+  facet_wrap(~ species_id)
+
+# One column, facet by rows
+yearly_sex_weight <- surveys_complete %>%
+  group_by(year, sex, species_id) %>%
+  summarize(avg_weight = mean(weight))
+
+
+ggplot(data = yearly_sex_weight, 
+       mapping = aes(x = year, y = avg_weight, color = species_id)) +
+  geom_line() +
+  facet_grid(sex ~ .)
+
+#reverse orientation
+ggplot(data = yearly_sex_weight, 
+       mapping = aes(x = year, y = avg_weight, color = species_id)) +
+  geom_line() +
+  facet_grid(. ~ sex)
+
+#use both facets
+ggplot(data = yearly_sex_weight,
+       aes(x = year, y = avg_weight)) +
+  geom_line() +
+  facet_grid(species_id~sex)
+
+
