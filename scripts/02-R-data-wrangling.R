@@ -121,7 +121,7 @@ surveys %>%
 #Same as
 surveys %>% 
   group_by(sex) %>% 
-  summarize(count = n)
+  summarize(count = n())
 
 # group by multiple variables
 surveys %>% 
@@ -160,11 +160,8 @@ big_animal<- surveys %>%
        filter(!is.na(weight)) %>%
        group_by(year) %>%
        filter(weight == max(weight)) %>%
-       select(year, genus, species_id) %>%
+       select(year, genus, species_id, weight) %>%
        arrange(year)
-       
-big_species<- big_animal %>%
-       filter(max(weight))
 
 ########################### Spread ############################################
 surveys_gw <- surveys %>%
