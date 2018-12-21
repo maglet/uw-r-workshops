@@ -9,7 +9,7 @@
 # The assignment operator (<-): storing values in variables
 
 weight_kg <- 55    # doesn't print anything
-(weight_kg <- 53)  # but putting parenthesis around the call prints the value of `weight_kg`
+(weight_kg <- 53)  # but putting parentheses around the call prints the value of `weight_kg`
 weight_kg          # and so does typing the name of the object
 
 # Example: unit conversions
@@ -133,13 +133,18 @@ mean(heights)
 mean(heights, na.rm = TRUE)
 
 ## Extract those elements which are not missing values.
-heights[!is.na(heights)]
 
-## Returns the object with incomplete cases removed. The returned object is an atomic vector of type `"numeric"` (or `"double"`).
+is.na(heights) #TRUE if missing
+heights[is.na(heights)] #Only NA are TRUE -> keeps NA
+!is.na(heights) #FALSE if missing
+heights[!is.na(heights)] #Missing are FALSE -> removes NA
+
+## Extract those elements which are complete cases. 
+complete.cases(heights) #NAs are FALSE
+heights[complete.cases(heights)] #Removes NA
+
+## Returns the object with incomplete cases removed
 na.omit(heights)
-
-## Extract those elements which are complete cases. The returned object is an atomic vector of type `"numeric"` (or `"double"`).
-heights[complete.cases(heights)]
 
 # Starting with data
 
