@@ -1,7 +1,13 @@
-# uw-r-workshops
-Workshops taught through Steenbock library on R programming for researchers. Based heavily on the Data Carpentry content.
+# R workshops for researchers
+UW-Madison libraries are offering R programming Workshops on R programming for researchers. The intended audience is anyone at the univerity who is working with tabular research data (including graduate students, faculty, research staff, and undergraduate researchers) and would like to learn how to automate data processing using the R programming language. The content is based heavily on the R Ecology Data Carpentry content, but will cover useful skills for anyone working with tabular data. Later sessions go beyone the Data Carpentry Lessons to cover how to use git version control within R Studio and writing reproducible reports using RMarkdown.
 
-## Tentative Schedule
+## Prerequisites
+There are no prerequisites for the R basics session, though those with some experience working with tabular data will get the most out of the session. All other sessions require the R basics session or some experience using R (ie, how to use the assignment operator and functions). Please email tobin.magle@wisc.edu if you have questions.
+
+## Registration
+Registration is by workshop, not for the entire series. Please feel free to register for whatever sessions you feel are appropriate for you. Software for these sessions is pre installed on the computer lab machines at Steenbock Library. Registration is required to ensure that we have enough computers to accomodate the number of attendees. If you are on the waitlist and would like to bring your own device to the session, email tobin.magle@wisc.edu to discuss what software you will need to install before the session.
+
+## Schedule
 These workshops will be held biweekly on Fridays from 10 am to 12 pm in Steenbock Classroom 105 at the University of Wisconsin-Madison. 
 
 Title | Date
@@ -13,7 +19,7 @@ Title | Date
 [R reports](https://researchguides.library.wisc.edu/R/tidyverse)|4/12/2019
 
 ## Content
-Workshop slides and other content can be found [here](https://researchguides.library.wisc.edu/R)
+Below are descriptions of each workshop. Workshop slides and other content can be found [here](https://researchguides.library.wisc.edu/R)
 
 ### R basics
 
