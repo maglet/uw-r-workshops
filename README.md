@@ -10,13 +10,13 @@ Registration is by workshop, not for the entire series. Please feel free to regi
 ## Schedule
 These workshops will be held biweekly on Fridays from 10 am to 12 pm in Steenbock Classroom 105 at the University of Wisconsin-Madison. 
 
-Title | Date
-------|-------------------------------
-[R basics](https://researchguides.library.wisc.edu/R/basics)|2/15/2019
-[R data wrangling](https://researchguides.library.wisc.edu/R/tidyverse)|3/01/2019
-[R visualization](https://researchguides.library.wisc.edu/R/tidyverse)|3/15/2019
-[R version control](https://researchguides.library.wisc.edu/R/tidyverse)|3/29/2019
-[R reports](https://researchguides.library.wisc.edu/R/tidyverse)|4/12/2019
+Title | Date | Registration Link
+------|-------------------------------|----------------------------------
+[R basics](https://researchguides.library.wisc.edu/R/basics)|2/15/2019 | https://go.wisc.edu/o3g812
+[R data wrangling](https://researchguides.library.wisc.edu/R/tidyverse)|3/01/2019 | https://go.wisc.edu/9rirbv 
+[R visualization](https://researchguides.library.wisc.edu/R/tidyverse)|3/15/2019 | https://go.wisc.edu/282iaj 
+[R version control](https://researchguides.library.wisc.edu/R/tidyverse)|3/29/2019 | https://go.wisc.edu/fdl6v8 
+[R reports](https://researchguides.library.wisc.edu/R/tidyverse)|4/12/2019 | https://go.wisc.edu/1o5o29
 
 ## Content
 Below are descriptions of each workshop. Workshop slides and other content can be found [here](https://researchguides.library.wisc.edu/R)
