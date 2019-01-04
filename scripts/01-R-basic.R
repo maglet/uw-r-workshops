@@ -44,6 +44,25 @@ args(round)          #lists the argument of the round function to the console
 
 round(3.14159, digits =2) #Rounds the output to 2 digits
 
+# Determining data types
+
+#Assign a number value to an object
+x<-32
+class(x) #numeric
+
+#Assign text value to an object
+y<-"hi"
+class(y) #character
+
+#Assign logical value to an object
+z<- TRUE
+class(z) #logical
+
+#look for differences with type of
+typeof(x) #double
+typeof(y) #character
+typeof(z) #logical
+
 # Vectors and datatypes
 #   Vectors allow you to assign multiple values to one variable
 
