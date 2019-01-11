@@ -31,7 +31,7 @@ What you can do with your data depends strongly on how its formatted. This works
 
 ### R data visualization
 
-So you're familiar with R, but want to do more with your plots than the base graphics package. This month's Coding and Cookies will show you how to use the ggplot2 package in R. After this session, you will be able to create a variety of plot types, alter their aesthetics, and create custom themes.
+So you're familiar with R, but want to do more with your plots than the base graphics package. This workshop will show you how to use the ggplot2 package in R. After this session, you will be able to create a variety of plot types, alter their aesthetics, and create custom themes.
 Prerequisites	A working knowledge of R and R studio and dplyr would be helpful for you to get the most out of this session.
 
 ### R version control
