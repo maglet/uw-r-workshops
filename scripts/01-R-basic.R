@@ -63,7 +63,7 @@ typeof(x) #double
 typeof(y) #character
 typeof(z) #logical
 
-# Vectors and datatypes
+# Vectors
 #   Vectors allow you to assign multiple values to one variable
 
 weight_g<-c(50,60,65,82) #vector of numbers
