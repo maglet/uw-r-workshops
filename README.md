@@ -8,16 +8,16 @@ There are no prerequisites for the R basics session, though those with some expe
 Registration is by workshop, not for the entire series. Please feel free to register for whatever sessions you feel are appropriate for you. Software for these sessions is pre installed on the computer lab machines at Steenbock Library. Registration is required to ensure that we have enough computers to accomodate the number of attendees. If you are on the waitlist and would like to bring your own device to the session, email tobin.magle@wisc.edu to discuss what software you will need to install before the session.
 
 ## Schedule
-These workshops will be held biweekly on Fridays from 10 am to 12 pm in Steenbock Classroom 105 at the University of Wisconsin-Madison unless otherwise noted. 
+These workshops will be held biweekly on Fridays in Steenbock Classroom 105 at the University of Wisconsin-Madison unless otherwise noted. 
 
-Title | Date | Registration Link
+Title | Date and | Registration Link
 ------|-------------------------------|----------------------------------
-[R basics*](https://researchguides.library.wisc.edu/R/basics)|2/15/2019 | https://go.wisc.edu/o3g812
+[R basics*](https://researchguides.library.wisc.edu/R/basics)|2/15/2019, 10 am - 12 pm | https://go.wisc.edu/o3g812
 [R basics*](https://researchguides.library.wisc.edu/R/basics)|2/19/2019, 2:30-4:30 pm | https://go.wisc.edu/tt6j51
-[R data wrangling](https://researchguides.library.wisc.edu/R/tidyverse)|3/01/2019 | https://go.wisc.edu/9rirbv 
-[R visualization](https://researchguides.library.wisc.edu/R/tidyverse)|3/15/2019 | https://go.wisc.edu/282iaj 
-[R version control](https://researchguides.library.wisc.edu/R/tidyverse)|3/29/2019 | https://go.wisc.edu/fdl6v8 
-[R reports](https://researchguides.library.wisc.edu/R/tidyverse)|4/12/2019 | https://go.wisc.edu/1o5o29
+[R data wrangling](https://researchguides.library.wisc.edu/R/tidyverse)|3/01/2019, 10 am - 12 pm | https://go.wisc.edu/9rirbv 
+[R visualization](https://researchguides.library.wisc.edu/R/tidyverse)|3/15/2019, 10 am - 12 pm | https://go.wisc.edu/282iaj 
+[R version control](https://researchguides.library.wisc.edu/R/tidyverse)|3/29/2019, 10 am - 12 pm | https://go.wisc.edu/fdl6v8 
+[R reports](https://researchguides.library.wisc.edu/R/tidyverse)|4/12/2019, 10 am - 12 pm | https://go.wisc.edu/1o5o29
 
 /* These two events cover the same material. Please only sign up for 1 session to allow more people to learn this material.
 
