@@ -19,7 +19,7 @@ Title | Date | Registration Link
 [R version control](https://researchguides.library.wisc.edu/R/tidyverse)|3/29/2019 | https://go.wisc.edu/fdl6v8 
 [R reports](https://researchguides.library.wisc.edu/R/tidyverse)|4/12/2019 | https://go.wisc.edu/1o5o29
 
-* These two events cover the same material. Please only sign up for 1 session to allow more people to learn this material.
+/* These two events cover the same material. Please only sign up for 1 session to allow more people to learn this material.
 
 ## Content
 Below are descriptions of each workshop. Workshop slides and other content can be found [here](https://researchguides.library.wisc.edu/R)
