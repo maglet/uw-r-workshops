@@ -251,4 +251,4 @@ dollar<-as.data.frame(dollar)      # Convertng a vector to a data.frame
 
 #### Write data to a new file
 
-write.csv(surveys, "data/surveys.csv")
+write.csv(surveys200, "data/surveys_sample.csv")

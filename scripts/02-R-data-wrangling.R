@@ -223,4 +223,4 @@ surveys_complete <- surveys_complete %>%
        filter(species_id %in% species_counts$species_id)
 
 ################################# Exporting data #######################################################
-write_csv(surveys_complete, path = "data/surveys_complete.csv")
+write_csv(surveys_complete, path = "data/complete_surveys.csv")
