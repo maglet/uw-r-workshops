@@ -89,6 +89,8 @@ weight_g <- c(weight_g, 90) # add to the end of the vector
 weight_g <- c(30, weight_g) # add to the beginning of the vector
 weight_g
 
+
+
 #Exercise: Class coercion - What types are these vectors?
   
 num_char <- c(1, 2, 3, "a")
@@ -97,6 +99,25 @@ char_logical <- c("a", "b", "c", TRUE)
 tricky <- c(1, 2, 3, "4")
 
 #Hint: use class()
+
+######################################## Factors ######################################
+
+# Create a factor variable
+sex <- factor(c("male", "female", "female", "male"))
+
+#Outputs the factor labels (unique values in the column)
+levels(sex)  #male/female
+
+# Outputs how many levels are in the factor
+nlevels(sex)                #2
+
+#reoder the levels using the levels argument
+sex <- factor(sex, levels = c("male", "female"))
+
+## Exercise: 
+ranks<- c("2", "5", "7", "3", "3")
+ranks<-factor(ranks)
+as.numeric(ranks)
 
 #Subsetting vectors
 
@@ -228,48 +249,6 @@ dollar<-as.data.frame(dollar)      # Convertng a vector to a data.frame
 
 #Use nrow() to extract the row that is in the middle surveys_200. Store in a variable called surveys_mid
 
-
-######################################## Factors ######################################
-
-# Create a factor variable
-sex <- factor(c("male", "female", "female", "male"))
-
-#Outputs the factor labels (unique values in the column)
-levels(sex)  #male/female
-levels(surveys$species_id) #all the different species represented 
-
-# Outputs how many levels are in the factor
-nlevels(sex)                #2
-nlevels(surveys$species_id) #48
-
-#reoder the levels using the levels argument
-sex <- factor(sex, levels = c("male", "female"))
-
-############ Plotting with factors
-
-plot(surveys$sex)                          # Makes a bar graph with charts
-
-##Renaming levels
-sex <- surveys$sex 			       # subset the column
-head(sex)				               # look at first 6 records
-levels(sex)				               # look at the factor levels
-levels(sex)[1] <- "missing" 		# change the first label to “missing”
-levels(sex)				              # look at factor levels again
-head(sex)				              # see where missing values were
-
-#Preventing factors
-## Compare the difference between when the data are being read as 
-## `factor`, and when they are being read as `character`. 
-surveys <- read.csv("data/portal_data_joined.csv", 
-                    stringsAsFactors = TRUE) 
-str(surveys) 
-
-surveys <- read.csv("data/portal_data_joined.csv", 
-                    stringsAsFactors = FALSE) 
-str(surveys) 
-
-
-
 #### Write data to a new file
-surveys200<-surveys[1:200,]
-write.csv(surveys200, "data/surveys200.csv")
+
+write.csv(surveys, "data/surveys.csv")
