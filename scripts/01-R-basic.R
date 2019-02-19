@@ -89,8 +89,6 @@ weight_g <- c(weight_g, 90) # add to the end of the vector
 weight_g <- c(30, weight_g) # add to the beginning of the vector
 weight_g
 
-
-
 #Exercise: Class coercion - What types are these vectors?
   
 num_char <- c(1, 2, 3, "a")
@@ -103,7 +101,11 @@ tricky <- c(1, 2, 3, "4")
 ######################################## Factors ######################################
 
 # Create a factor variable
-sex <- factor(c("male", "female", "female", "male"))
+sex <- c("male", "female", "female", "male")
+
+class(sex)
+
+sex<-factor(sex)
 
 #Outputs the factor labels (unique values in the column)
 levels(sex)  #male/female
@@ -145,7 +147,7 @@ weight_g[weight_tf]
 #same as
 weight_g[weight_g>50]
 
-#using boolean operators 
+#Combining logical expressions
 weight_g[weight_g < 30 | weight_g > 50]
 weight_g[weight_g >= 30 & weight_g == 21]
 
@@ -172,7 +174,7 @@ mean(heights)
 
 mean(heights, na.rm = TRUE)
 
-## Extract those elements which are not missing values.
+## Remove missing data
 
 is.na(heights) #TRUE if missing
 heights[is.na(heights)] #Only NA are TRUE -> keeps NA
@@ -189,7 +191,7 @@ na.omit(heights)
 # Starting with data
 
 # Load the data into R (read.csv is the function, file name is the argument, output stored in surveys)
-surveys <- read.csv('data/raw_surveys.csv')
+surveys <- read.csv("data/raw_surveys.csv")
 
 # Survey is a data frame:
 ### rows are observations
@@ -213,7 +215,7 @@ summary(surveys) #= does summary stats for each column
   
 ################################## Subsetting ######################################################
 
-############ With Bracets
+############ With Brackets
 #variable[row,column]
 
 surveys[1,1] #first column, first row
@@ -249,6 +251,8 @@ dollar<-as.data.frame(dollar)      # Convertng a vector to a data.frame
 
 #Use nrow() to extract the row that is in the middle surveys_200. Store in a variable called surveys_mid
 
+surveys_200<-surveys[1:200,]
+
 #### Write data to a new file
 
-write.csv(surveys200, "data/surveys_sample.csv")
+write.csv(surveys_200, "data/surveys_sample.csv")
