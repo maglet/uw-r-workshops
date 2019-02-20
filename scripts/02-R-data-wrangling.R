@@ -203,7 +203,7 @@ ex4 %>%
   gather(key = year, value =  n, "1977":"2002")
 
 ########################### Data Cleaning ################################################################
-#What colmns have missing values
+#What colmns have missing values?
 
 long_surveys<-surveys%>%
   gather(key = metric, 
