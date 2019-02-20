@@ -85,7 +85,7 @@ surveys%>%
 #Split-apply-combine with summarize
 
 # create a summary of the weight variable
-surveys %>%
+grouped_surveys<-surveys %>%
        summarize(mean_weight = mean(weight, na.rm = TRUE))
 #not very informative w/o group by
 
@@ -95,7 +95,7 @@ grouped_surveys<-surveys %>%
        summarize(mean_weight = mean(weight, na.rm = TRUE))
 
 #group by multiple variables
-surveys %>%
+grouped_surveys<- surveys %>%
        group_by(sex, species_id) %>%
        summarize(mean_weight = mean(weight, na.rm = TRUE))
 
@@ -106,7 +106,7 @@ surveys %>%
        summarize(mean_weight = mean(weight))
 
 #calculate  multiple summary statistics
-surveys %>%
+grouped_surveys<-surveys %>%
        filter(!is.na(weight)) %>%
        group_by(sex, species_id) %>%
        summarize(mean_weight = mean(weight),
@@ -132,9 +132,6 @@ surveys %>%
   count(sex,  species) %>%
   arrange(species, #alphabetical
           desc(n)) #descending
-
-
-
 
 ################################# Exercise 3 ####################################################################
 #How many individuals were caught in each plot_type surveyed?
@@ -206,9 +203,21 @@ ex4 %>%
   gather(key = year, value =  n, "1977":"2002")
 
 ########################### Data Cleaning ################################################################
+#What colmns have missing values
+
+long_surveys<-surveys%>%
+  gather(key = metric, 
+         value = value)
+
+na_table<-long_surveys%>%
+  group_by(metric)%>%
+  summarize(nas = sum(is.na(value)))
+
+# 3 cols with NAs: sex, weight, hindfoot length
+
+#remove missing values
 surveys_complete <- surveys %>% 
-       filter(species_id != "", # remove missing species_id 			         		
-              !is.na(weight), # remove missing weight 	      	 				
+       filter(!is.na(weight), # remove missing weight 	      	 				
               !is.na(hindfoot_length), # remove missing hindfoot_length 
               sex != "") # remove missing sex
 
