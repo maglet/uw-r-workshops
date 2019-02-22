@@ -4,12 +4,16 @@
 
 #installing packages
 #install.packages("tidyverse")
+
+#loading packages
 library("tidyverse")
 
-surveys_dot <- read.csv('data/raw_surveys.csv')
+#read the data as a data frame
+surveys_dot <- read.csv("data/raw_surveys.csv")
 surveys_dot
 str(surveys_dot)
 
+#read the data as a 'tibble'
 surveys <- read_csv('data/raw_surveys.csv')
 surveys
 str(surveys)
@@ -17,21 +21,44 @@ str(surveys)
 ############################## The Verbs! ################################
 
 ### Select
-select(surveys, plot_id, species_id, weight) 
+select(surveys,      #the data
+       weight)       #selects the weight column
+
+#same as
+tibble(surveys$weight)
+
+#select multiple columns
+select(surveys,      #the data
+       plot_id,      #selects the plot_id column
+       species_id,   #selects the species_id column
+       weight)       #selects the weight column
+
 
 ### Filter
 filter(surveys, year == 1995) 
 
-###pipes
-surveys %>%
-       filter(weight<5) %>%
-       select(species_id, sex, weight)
+#same as 
+surveys[surveys$year == 1995, ]
 
-surveys_sml <- surveys %>%
+#filter by multiple attributes
+
+filter(surveys,          #the data
+       year == 1995 &    #filter for rows that have 1995 in year column
+       sex == "F")       #filter for rows that have F in the sex column
+
+#same as 
+surveys[surveys$year == 1995 & surveys$sex == "F", ]
+
+###pipes
+surveys %>%                             #the data then
+       filter(weight<5) %>%             #filter for rows where weight is less than 5 then
+       select(species_id, sex, weight)  #select the species_id, sex, and weight columns
+
+surveys_sml <- surveys %>%              # saves to a new object
        filter(weight < 5) %>%
        select(species_id, sex, weight)
 
-surveys_sml
+surveys_sml                             #prints object to console
 
 
 #Exercise #1: 
@@ -48,90 +75,84 @@ surveys %>%
        filter(year == 1995)
 
 ### Mutate
-mutate(surveys, weight_kg = weight/1000)
+mutate(surveys,                          #the data
+       weight_kg = weight/1000)          #a new column definition
+                                         #creates a new column called weight_kg
+                                         #that holds the corresponding weight value / 1000
 
 #same as
-surveys %>%
-       mutate(weight_kg = weight / 1000)
+surveys %>%                              #the data
+       mutate(weight_kg = weight / 1000) #see above 
 
 # add 2 new columns at once
-surveys %>%
-       mutate(weight_kg = weight / 1000, 
-              weight_kg2 = weight_kg *2)
-
-# remove missing values
-
-surveys %>%
-       filter(!is.na(weight)) %>%
-       mutate(weight_kg = weight / 1000)
-
-#removing missing values
-surveys %>%
-       filter(!is.na(weight)) %>%
-       mutate(weight_kg = weight / 1000)
+surveys %>%                              #the data
+       mutate(weight_kg = weight / 1000, #see above
+              weight_kg2 = weight_kg *2) #creates a column called weight_kg2
+                                         #that holds the value weight_kg*2
 
 ##### Exercise 2 
 #Create a new data frame from the survey data that meets the following criteria: 
-      # * contains only the species_id column and a new column called hindfoot_half containing 
-          # values that are half the hindfoot_length values. 
-      # * In this hindfoot_halfcolumn, there are no NAs and all values are less than 30.
+# * contains only the species_id column and a new column called hindfoot_half containing 
+# values that are half the hindfoot_length values. 
+# * In this hindfoot_halfcolumn, there are no NAs and all values are less than 30.
 #Hint: think about how the commands should be ordered to produce this data frame!
 
 surveys%>%
-       filter(year>1990)%>%
-       mutate(hindfoot_half = hindfoot_length/2) %>%
-       select(species_id, hindfoot_half)
-
-#Split-apply-combine with summarize
+  filter(year>1990)%>%
+  mutate(hindfoot_half = hindfoot_length/2) %>%
+  select(species_id, hindfoot_half)
 
 # create a summary of the weight variable
 grouped_surveys<-surveys %>%
-       summarize(mean_weight = mean(weight, na.rm = TRUE))
+       summarize(mean_weight = mean(weight,         #summary statistic
+                                    na.rm = TRUE))  #ignore NAs
 #not very informative w/o group by
 
 #group by then summarize creats a summary table
 grouped_surveys<-surveys %>%
-       group_by(sex) %>%
-       summarize(mean_weight = mean(weight, na.rm = TRUE))
+       group_by(sex) %>%                            #categorical variable
+       summarize(mean_weight = mean(weight,         #see
+                                    na.rm = TRUE))  #   above
 
 #group by multiple variables
 grouped_surveys<- surveys %>%
-       group_by(sex, species_id) %>%
-       summarize(mean_weight = mean(weight, na.rm = TRUE))
+       group_by(sex, species_id) %>%                #two categoriacl variables
+       summarize(mean_weight = mean(weight,         #see
+                                    na.rm = TRUE))  #   above
 
 #remove missing data with is.na
 surveys %>%
-       filter(!is.na(weight)) %>%
-       group_by(sex, species_id) %>%
-       summarize(mean_weight = mean(weight))
+       filter(!is.na(weight)) %>%               #remove NAs
+       group_by(sex, species_id) %>%            #make rows for sex and species id
+       summarize(mean_weight = mean(weight))    #create mean_weight stat
 
-#calculate  multiple summary statistics
+#filtering makes it easy to calculate  multiple summary statistics
 grouped_surveys<-surveys %>%
        filter(!is.na(weight)) %>%
        group_by(sex, species_id) %>%
        summarize(mean_weight = mean(weight),
-                 min_weight = min(weight))
+                 min_weight = min(weight))      #calculate a second stat
 
 #Counting observations in categories
 
 # count observation in each category
-surveys %>% 
-  count(sex)
+surveys %>%              #the data
+  count(sex)             #variable to count by
 
 #Same as
-surveys %>% 
-  group_by(sex) %>% 
-  summarize(count = n())
+surveys %>%                 #the data
+  group_by(sex) %>%         #the variable to coutn by
+  summarize(count = n())    #summarize with the count function
 
 # group by multiple variables
-surveys %>% 
-  count(sex,  species)
+surveys %>%                 #the data
+  count(sex,  species)      #count by 2 variables
 
 #sort by 2 things
-surveys %>% 
-  count(sex,  species) %>%
-  arrange(species, #alphabetical
-          desc(n)) #descending
+surveys %>%                      #the data
+  count(sex,  species) %>%       #count by 2 variables
+  arrange(species,               #arrange alphabetical
+          desc(n))               #arrange descending
 
 ################################# Exercise 3 ####################################################################
 #How many individuals were caught in each plot_type surveyed?
@@ -142,25 +163,46 @@ surveys %>%
 
 #Individuals per plot type
 surveys %>%
-       count(plot_type)
+       count(plot_type) #count the number of records for each plot type
 
 #hfl by species
 surveys %>%
-       group_by(species_id) %>%
-       filter(!is.na(hindfoot_length))%>%
-       summarize(mean_hfl = mean(hindfoot_length), 
-                 min_hfl = min(hindfoot_length), 
-                 max_hfl = max(hindfoot_length))
+       group_by(species_id) %>%            # group by species id
+       filter(!is.na(hindfoot_length))%>%  # filter out missing values
+       summarize(mean_hfl = mean(hindfoot_length), #calculate
+                 min_hfl = min(hindfoot_length),       #summary
+                 max_hfl = max(hindfoot_length))         #statistics
 
 #heavist animal measured in each year
-big_animal<- surveys %>% 
-       filter(!is.na(weight)) %>%
-       group_by(year) %>%
-       filter(weight == max(weight)) %>%
-       select(year, genus, species_id, weight) %>%
-       arrange(year)
+big_animal<- surveys %>%                            # the data
+       filter(!is.na(weight)) %>%                   # remove missing values
+       group_by(year) %>%                           # group by year
+       filter(weight == max(weight)) %>%            # filter to keep only max value
+       select(year, genus, species_id, weight) %>%  # select columns
+       arrange(year)                                # arrange by year.
 
 ########################### Spread ############################################
+#find the most abundant species
+surveys%>%
+  count(species_id)%>%
+  arrange(desc(n))
+
+#subset on the columns you want
+surveys_sp<-surveys %>%
+  filter(!is.na(weight), species_id=="DM")%>%
+  group_by(sex, plot_type)%>%
+  summarize(mean_weight = mean(weight))
+
+#spread to make a table with rows for plots and cols for sex
+surveys_spread<-surveys_sp%>%
+  spread(key = sex, value = mean_weight)
+
+
+#plot
+ggplot(surveys_sp, aes(x = plot_type, y = mean_weight, color = sex))+
+  geom_point()
+
+
 surveys_gw <- surveys %>%
        filter(!is.na(weight)) %>%
        group_by(genus, plot_id) %>%
@@ -174,7 +216,7 @@ surveys_spread <- surveys_gw %>%
 str(surveys_spread)
 
 surveys_gw %>%
-       spread(genus, mean_weight, fill = 0) %>%
+       spread(key = genus, value = mean_weight, fill = 0) %>%
        head()
 
 ############################### Gather ######################################### 
