@@ -188,7 +188,7 @@ surveys%>%
   arrange(desc(n))
 
 #subset on the columns you want
-surveys_sp<-surveys %>%
+surveys_ps<-surveys %>%
   filter(!is.na(weight), species_id=="DM")%>%
   group_by(sex, plot_type)%>%
   summarize(mean_weight = mean(weight))
@@ -198,36 +198,12 @@ surveys_spread<-surveys_sp%>%
   spread(key = sex, value = mean_weight)
 
 
-#plot
-ggplot(surveys_sp, aes(x = plot_type, y = mean_weight, color = sex))+
-  geom_point()
-
-
-surveys_gw <- surveys %>%
-       filter(!is.na(weight)) %>%
-       group_by(genus, plot_id) %>%
-       summarize(mean_weight = mean(weight))
-
-str(surveys_gw)
-
-surveys_spread <- surveys_gw %>%
-       spread(key = genus, value = mean_weight)
-
-str(surveys_spread)
-
-surveys_gw %>%
-       spread(key = genus, value = mean_weight, fill = 0) %>%
-       head()
-
 ############################### Gather ######################################### 
-surveys_gather <- surveys_spread %>%
-       gather(key = genus, value = mean_weight, -plot_id)
+surveys_gather<- surveys_spread %>% 
+  gather(key = sex, 
+         value = mean_weight,
+         "F":"M")
 
-str(surveys_gather)
-
-surveys_spread %>%
-       gather(key = genus, value = mean_weight, Baiomys:Spermophilus) %>%
-       head()
 
 ################### Exercise 4
 #Spread the surveys data frame with year as columns, plot_id as rows, and the number of genera per plot as the values. Hints: 
