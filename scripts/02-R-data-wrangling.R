@@ -51,14 +51,8 @@ surveys[surveys$year == 1995 & surveys$sex == "F", ]
 
 ###pipes
 surveys %>%                             #the data then
-       filter(weight<5) %>%             #filter for rows where weight is less than 5 then
+       filter(weight < 5) %>%             #filter for rows where weight is less than 5 then
        select(species_id, sex, weight)  #select the species_id, sex, and weight columns
-
-surveys_sml <- surveys %>%              # saves to a new object
-       filter(weight < 5) %>%
-       select(species_id, sex, weight)
-
-surveys_sml                             #prints object to console
 
 
 #Exercise #1: 
@@ -76,7 +70,7 @@ surveys %>%
 
 ### Mutate
 mutate(surveys,                          #the data
-       weight_kg = weight/1000)          #a new column definition
+       weight_kg = weight / 1000)          #a new column definition
                                          #creates a new column called weight_kg
                                          #that holds the corresponding weight value / 1000
 
@@ -181,17 +175,22 @@ big_animal<- surveys %>%                            # the data
        select(year, genus, species_id, weight) %>%  # select columns
        arrange(year)                                # arrange by year.
 
-########################### Spread ############################################
+######## the tidyr package
 #find the most abundant species
-surveys%>%
-  count(species_id)%>%
-  arrange(desc(n))
+surveys%>%                    # the data
+  count(species_id)%>%        # count observations in each species_id category
+  arrange(desc(n))            # sort by number of observations 
 
-#subset on the columns you want
-surveys_ps<-surveys %>%
-  filter(!is.na(weight), species_id=="DM")%>%
-  group_by(sex, plot_type)%>%
-  summarize(mean_weight = mean(weight))
+#filter, group and summarize
+surveys_ps <- surveys %>%               # the data
+  filter(!is.na(weight),                # remove missing weight values
+         species_id == "DM")%>%         # filter for most abundant species
+  group_by(sex,                         # group by sex
+           plot_type)%>%                # group by plot type
+  summarize(mean_weight = mean(weight)) # calculate the mean weight
+
+########################### Spread ############################################
+
 
 #spread to make a table with rows for plots and cols for sex
 surveys_spread<-surveys_sp%>%
@@ -245,6 +244,7 @@ species_counts <- surveys_complete %>%
        group_by(species_id) %>% 
        tally %>% 
        filter(n >= 50) 
+
 ## Only keep the most common species 
 surveys_complete <- surveys_complete %>% 
        filter(species_id %in% species_counts$species_id)
