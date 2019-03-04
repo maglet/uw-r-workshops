@@ -1,4 +1,4 @@
-# Registration for this semester's workshops are full. 
+# Registration for the Spring 2019 workshops is full. 
 Feel free to join the waitlist using the registration links below. If you would like to join our listserve to be kept up to date on new workshops for Summer and Fall 2019, email join-rds-r-workshops@lists.wisc.edu.
 
 # R workshops for researchers
