@@ -1,4 +1,5 @@
-# Registration for this semester's workshops are full. Feel free to join the waitlist using the registration links below. If you would like to join our listserve to be kept up to date on new workshops for Summer and Fall 2019, email (mailto:join-rds-r-workshops@lists.wisc.edu).
+# Registration for this semester's workshops are full. 
+Feel free to join the waitlist using the registration links below. If you would like to join our listserve to be kept up to date on new workshops for Summer and Fall 2019, email (join-rds-r-workshops@lists.wisc.edu).
 
 # R workshops for researchers
 UW-Madison libraries are offering R programming Workshops on R programming for researchers. The intended audience is anyone at the univerity who is working with tabular research data (including graduate students, faculty, research staff, and undergraduate researchers) and would like to learn how to automate data processing using the R programming language. The content is based heavily on the R Ecology Data Carpentry content, but will cover useful skills for anyone working with tabular data. Later sessions go beyone the Data Carpentry Lessons to cover how to use git version control within R Studio and writing reproducible reports using RMarkdown.
