@@ -1,5 +1,5 @@
 # Registration for this semester's workshops are full. 
-Feel free to join the waitlist using the registration links below. If you would like to join our listserve to be kept up to date on new workshops for Summer and Fall 2019, email (join-rds-r-workshops@lists.wisc.edu).
+Feel free to join the waitlist using the registration links below. If you would like to join our listserve to be kept up to date on new workshops for Summer and Fall 2019, email join-rds-r-workshops@lists.wisc.edu.
 
 # R workshops for researchers
 UW-Madison libraries are offering R programming Workshops on R programming for researchers. The intended audience is anyone at the univerity who is working with tabular research data (including graduate students, faculty, research staff, and undergraduate researchers) and would like to learn how to automate data processing using the R programming language. The content is based heavily on the R Ecology Data Carpentry content, but will cover useful skills for anyone working with tabular data. Later sessions go beyone the Data Carpentry Lessons to cover how to use git version control within R Studio and writing reproducible reports using RMarkdown.
@@ -47,6 +47,3 @@ We've all intuitively used some type of version control in our work such as savi
 ### R reports
 
 Documenting your analysis in a way that is understandable to a colleague (or yourself 3 months later) can be challenging. One way to make reports more readable, even by people who don't code, is to alternate human readable text with machine readable code. This month's Coding and Cookies will cover creating reproducible reports of this type using knitr. After this session, you will be able to create R markdown documents, add formatted text and executable code blocks, and render the R markdown document into a final report.
-
-
-
