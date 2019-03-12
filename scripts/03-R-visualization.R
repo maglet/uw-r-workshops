@@ -33,7 +33,6 @@ ggplot(data = surveys_complete,
        mapping = aes(x = weight, 
                      y = hindfoot_length))
 
-
 # Step 3: specify the geometry 
   #- use a geom function to specify how the data should be plotted
   # "add" aesthetics to the ggplot function with + operator
@@ -41,27 +40,27 @@ ggplot(data = surveys_complete,
   # adds data points to the plot
 
 ggplot(data = surveys_complete, 
-       x = weight, 
-       y = hindfoot_length) + 
+       mapping = aes(x = weight, 
+                     y = hindfoot_length)) + 
   geom_point()
 
 # Adding arguments to the geom to change appearance:
 
 # Add transparency with the alpha argument to geom_pont
-ggplot(data = surveys_complete, 
+ggplot(surveys_complete, 
        aes(x = weight, 
            y = hindfoot_length)) +
        geom_point(alpha = 0.1)
 
 # Add color with the color argument to geom_point
-ggplot(data = surveys_complete, 
+ggplot(surveys_complete, 
        aes(x = weight, 
            y = hindfoot_length)) +
        geom_point(alpha = 0.1, 
                   color = "blue")
 
 # Add color by species with color argument to aes
-ggplot(data = surveys_complete, 
+ggplot(surveys_complete, 
        aes(x = weight, 
            y = hindfoot_length)) +
        geom_point(alpha = 0.1, 
@@ -69,7 +68,7 @@ ggplot(data = surveys_complete,
 #aes in geom_point specifies only for the point
 
 # aes argument to ggplot specifies for the whole graph, 
-ggplot(data = surveys_complete, 
+ggplot(surveys_complete, 
        aes(x = weight,
            y = hindfoot_length,
            color=species_id)) +
@@ -85,7 +84,7 @@ ggplot(data = surveys_complete,
 #integer to factor. Why does this change how R makes the graph?
 
 #creates a color gradient because plot_id is a number, not character
-ggplot(data = surveys_complete, 
+ggplot(surveys_complete, 
        aes(x = weight,
            y = hindfoot_length,
            color=plot_id)) +
@@ -93,7 +92,7 @@ ggplot(data = surveys_complete,
 
 #you can tell ggplot to read it as a character rather than a number
 # using as.character
-ggplot(data = surveys_complete, 
+ggplot(surveys_complete, 
        aes(x = weight,
            y = hindfoot_length,
            color=as.character(plot_id))) +
@@ -102,37 +101,37 @@ ggplot(data = surveys_complete,
 
 ## plotting categorical variables
 
-ggplot(data = surveys_complete, 
+ggplot(surveys_complete, 
        aes(x = species_id,         # factor variable
            y = hindfoot_length)) + # numeric variable
   geom_point()
 
 # try a new geom: geom_jitter()
-ggplot(data = surveys_complete, 
+ggplot(surveys_complete, 
        aes(x = species_id,         # factor variable
            y = hindfoot_length)) + # numeric variable
   geom_jitter(alpha = 0.1)
 
 
 # Make a boxplot 
-ggplot(data = surveys_complete, 
+ggplot(surveys_complete, 
        aes(x = species_id,         # factor variable
            y = hindfoot_length)) + # numeric variable
        geom_boxplot()
 
 # Overlay points on a boxplot
-ggplot(data = surveys_complete, 
+ggplot(surveys_complete, 
        aes(x = species_id, 
            y = hindfoot_length)) +
        geom_boxplot() +
-       geom_jitter(alpha = 0.3, 
+       geom_jitter(alpha = 0.1, 
                    color = "tomato")
 
 #order is important
-ggplot(data = surveys_complete, 
+ggplot(surveys_complete, 
        aes(x = species_id, 
            y = hindfoot_length)) +
-  geom_jitter(alpha = 0.3, 
+  geom_jitter(alpha = 0.1, 
               color = "tomato")+
   geom_boxplot() 
 
@@ -166,14 +165,14 @@ ggplot(data = yearly_counts,
 #Combines number of all species into one line
 
 #One line for each species
-ggplot(data = yearly_counts, 
+ggplot(yearly_counts, 
        aes(x = year, 
            y = n, 
            group = species_id)) +  # make a new line for each species id
        geom_line()
 
 # add color by species
-ggplot(data = yearly_counts, 
+ggplot(yearly_counts, 
        aes(x = year, 
            y = n,
            color = species_id)) + # add color to create legend
@@ -185,6 +184,7 @@ lineplot<- ggplot(data = yearly_counts,
                       y = n))+
   geom_line(aes(color = species_id))
 
+lineplot
 
 #################### Exercise 3 #########################################
 #Use what you just learned to create a plot that depicts how the average 
@@ -194,9 +194,11 @@ yearly_weights<-surveys_complete%>%
   group_by(species_id, year)%>%
   summarize(mean_wt = mean(weight))
 
-ggplot(data = yearly_weights, 
-       aes(x = year, y = mean_wt))+ 
+mean_weight_sp<-ggplot(yearly_weights, 
+                       aes(x = year, 
+                           y = mean_wt))+ 
   geom_line(aes(color = species_id))
+
 ##########################################################################
 
 # Making publication quality plots
@@ -302,13 +304,17 @@ yearly_sex_weight <- surveys_complete %>%
 
 
 ggplot(data = yearly_sex_weight, 
-       mapping = aes(x = year, y = avg_weight, color = species_id)) +
+       mapping = aes(x = year, 
+                     y = avg_weight, 
+                     color = species_id)) +
   geom_line() +
   facet_grid(sex ~ .)
 
 #reverse orientation
 ggplot(data = yearly_sex_weight, 
-       mapping = aes(x = year, y = avg_weight, color = species_id)) +
+       mapping = aes(x = year, 
+                     y = avg_weight, 
+                     color = species_id)) +
   geom_line() +
   facet_grid(. ~ sex)
 
@@ -317,3 +323,9 @@ ggplot(data = yearly_sex_weight,
        aes(x = year, y = avg_weight)) +
   geom_line() +
   facet_grid(sex~species_id)
+
+# Faceting exercise
+#Using facets and themes, create a plot that depicts 
+#how the average weight of each species changes through 
+#the years.
+
