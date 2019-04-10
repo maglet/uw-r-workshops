@@ -7,20 +7,18 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=FALSE)
-library(ggplot2)
-library(dplyr)
+library(tidyverse)
 library(knitr)
 
 
-surveys_complete<-read.csv("../data/surveys_complete.csv")
+surveys_complete<-read_csv("../data/complete_surveys.csv")
 
 ```
 
 #Small animal survey data
 
 This is a survey of small animals from `r nlevels(as.factor(surveys_complete$plot_id))` plots
-from the years `r min(surveys_complete$year)` to `r max(surveys_complete$year)`. Each row is an animal. 
-Each column is an attribute of that animal. The variables recorded are `r names(surveys_complete)`.
+from the years `r min(surveys_complete$year)` to `r max(surveys_complete$year)`. Each row is an animal. Each column is an attribute of that animal. The variables recorded are `r names(surveys_complete)`.
 
 #Sex table
 Here is a breakdown of the number of female vs male animals observed in the study
