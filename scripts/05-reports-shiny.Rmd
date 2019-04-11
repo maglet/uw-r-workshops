@@ -6,7 +6,7 @@ output: html_document
 params:
           file:
                     label: "File"
-                    value: data/surveys_complete.csv
+                    value: ../data/complete_surveys.csv
                     input: file
                     
           sex:
@@ -28,7 +28,7 @@ params:
 library(tidyverse)
 library(knitr)
 
-surveys_complete<-read.csv(params$file)
+surveys_complete<-read_csv(params$file)
 
 surveys_complete<-surveys_complete%>%
           filter(sex==params$sex)%>%
