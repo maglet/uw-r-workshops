@@ -24,17 +24,14 @@ params:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo=FALSE)
-library(ggplot2)
-library(dplyr)
-library(knitr)
 
-#surveys_complete<-read.csv(paste("data/",f, sep=""))
+library(tidyverse)
+library(knitr)
 
 surveys_complete<-read.csv(params$file)
 
 surveys_complete<-surveys_complete%>%
-          #filter(sex==params$sex)%>%
+          filter(sex==params$sex)%>%
           filter(weight<=params$weight)
 
 ```
