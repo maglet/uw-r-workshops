@@ -6,9 +6,7 @@ output: html_document
 params:
           file: ../data/complete_surveys.csv
                     
-          sex: 'M'
-            
-          weight: 500
+          sex: [M, F]
 ---
 
 ```{r setup, include=FALSE}
@@ -19,9 +17,7 @@ library(knitr)
 surveys_complete<-read_csv(params$file)
 
 surveys_complete<-surveys_complete%>%
-          filter(sex%in%params$sex)%>%
-          filter(weight<=params$weight)
-
+          filter(sex%in%params$sex)
 ```
 
 #Small animal survey data
