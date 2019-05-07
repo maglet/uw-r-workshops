@@ -2,7 +2,7 @@
 
 UW-Libraries and the Data Science Hub will be hosting Open Coding Lab at Steenbock Library this summer. Use this time to work with your own data and get help from other coders. 
 
-The sessions will be on **Tuesdays from 2 pm to 4 pm** on the first floor of **Steenbock Library**. See the schedule below for more details. (Schedule is subject to change)
+The sessions will be on **Tuesdays from 2:30 pm to 4:30 pm** on the first floor of **Steenbock Library**. See the schedule below for more details. (Schedule is subject to change)
 
 Date | Location | Host
 -----|--------- |--------
