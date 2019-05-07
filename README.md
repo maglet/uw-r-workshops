@@ -1,3 +1,27 @@
+# Summer 2019: Open Coding Lab
+
+UW-Libraries and the Data Science Hub will be hosting Open Coding Lab at Steenbock Library this summer. The sessions will be on Tuesdays from 2 pm to 4 pm on the first floor of Steenbock Library. See the schedule below for more details. (Schedule is subject to change)
+
+Date | Location | Host
+-----|--------- |--------
+5/21 | 
+5/28 |
+6/4  |
+6/11 | Cancelled - Data Carpentry Workshop
+6/18 |
+6/25 |
+7/2  |
+7/9  |
+7/16 |
+7/23 |
+7/30 |
+8/6  |
+8/13 | 
+8/20 |
+8/27 |
+
+
+
 # Registration for the Spring 2019 workshops is full. 
 Feel free to join the waitlist using the registration links below. If you would like to join our listserve to be kept up to date on new workshops for Summer and Fall 2019, email join-rds-r-workshops@lists.wisc.edu.
 
