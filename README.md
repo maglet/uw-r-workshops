@@ -1,24 +1,26 @@
 # Summer 2019: Open Coding Lab
 
-UW-Libraries and the Data Science Hub will be hosting Open Coding Lab at Steenbock Library this summer. The sessions will be on Tuesdays from 2 pm to 4 pm on the first floor of Steenbock Library. See the schedule below for more details. (Schedule is subject to change)
+UW-Libraries and the Data Science Hub will be hosting Open Coding Lab at Steenbock Library this summer. Use this time to work with your own data and get help from other coders. 
+
+The sessions will be on **Tuesdays from 2 pm to 4 pm** on the first floor of **Steenbock Library**. See the schedule below for more details. (Schedule is subject to change)
 
 Date | Location | Host
 -----|--------- |--------
-5/21 | 
-5/28 |
-6/4  |
-6/11 | Cancelled - Data Carpentry Workshop
-6/18 |
-6/25 |
-7/2  |
-7/9  |
-7/16 |
-7/23 |
-7/30 |
-8/6  |
-8/13 | 
-8/20 |
-8/27 |
+5/21 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
+5/28 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
+6/4  | Biocommons Lounge (110C)| Sarah Stevens
+6/11 | Biocommons Lounge (110C)| TBD
+6/18 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
+6/25 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
+7/2  | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
+7/9  | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
+7/16 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
+7/23 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
+7/30 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
+8/6  | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
+8/13 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
+8/20 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
+8/27 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
 
 
 
