@@ -16,7 +16,7 @@ Date | Location | Host
 7/9  | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
 7/16 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
 7/23 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
-7/30 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
+7/30 | CANCELLED| CANCELLED
 8/6  | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
 8/13 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
 8/20 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
