@@ -6,23 +6,9 @@ The sessions will be on **Tuesdays from 2:30 pm to 4:30 pm** on the first floor 
 
 Date | Location | Host
 -----|--------- |--------
-5/21 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
-5/28 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
-6/4  | Biocommons Lounge (110C)| Sarah Stevens
-6/11 | Biocommons Lounge (110C)| TBD
-6/18 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
-6/25 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
-7/2  | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
-7/9  | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
-7/16 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
-7/23 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
-7/30 | CANCELLED| CANCELLED
-8/6  | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
 8/13 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
 8/20 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
 8/27 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
-
-
 
 # Registration for the Spring 2019 workshops is full. 
 Feel free to join the waitlist using the registration links below. If you would like to join our listserve to be kept up to date on new workshops for Summer and Fall 2019, email join-rds-r-workshops@lists.wisc.edu.
