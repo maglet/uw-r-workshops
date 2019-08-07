@@ -33,7 +33,7 @@ Title|Date|Instructor|Registration
 [R basics](https://researchguides.library.wisc.edu/R/basics)|Friday 9/6/2019|Tobin Magle|https://go.wisc.edu/43uh8r
 [R data wrangling](https://researchguides.library.wisc.edu/R/tidyverse)|Friday 9/20/2019|Trisha Adamus|Opens 9/6/2019
 [R visualization](https://researchguides.library.wisc.edu/R/ggplot2)| Friday 9/27/2019|Tobin Magle| Opens 9/20/2019
-R text data|Friday 10/04/2019|Tobin Magle and Sarah Stevens|Opens 9/20/2019
+R text data|Friday 10/04/2019|Sarah Stevens|Opens 9/20/2019
 R reports|Friday 10/18/2019|Tobin Magle|Opens 10/4/2-19
 R version control basics|Friday 10/25/2019|Tobin Magle|Opens 10/18/2019
 R version control for collaboration|Friday 11/1/2019|Sarah Stevens|Opens 10/25/2019
