@@ -2,7 +2,7 @@
 
 UW-Libraries and the Data Science Hub will be hosting Open Coding Lab at Steenbock Library this summer. Use this time to work with your own data and get help from other coders. 
 
-The sessions will be on **Tuesdays from 2:30 pm to 4:30 pm** on the first floor of **Steenbock Library**. See the schedule below for more details. (Schedule is subject to change)
+The sessions will be on **Tuesdays from 2:30 pm to 4:30 pm** in the Biocommons Lounge on the first floor of **Steenbock Library**. See the schedule below for more details. (Schedule is subject to change)
 
 Date | Location | Host
 -----|--------- |--------
@@ -10,10 +10,13 @@ Date | Location | Host
 8/20 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
 8/27 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
 
-# Registration for the Spring 2019 workshops is full. 
-Feel free to join the waitlist using the registration links below. If you would like to join our listserve to be kept up to date on new workshops for Summer and Fall 2019, email join-rds-r-workshops@lists.wisc.edu.
+# Fall 2019: Workshops and Open Coding Lab
+We'll be holding an expanded R workshop series AND Open Coding Lab Fall 2019. The workshops will be held **Fridays 10am -12 pm** in Steenbock Computer classroom 105. Open Coding lab will be held **Tuesdays from 2:30 pm to 4:30 pm** in the Biocommons Lounge. 
 
-# R workshops for researchers
+## Stay in the know. 
+Join our listserve to be kept up to date on new workshops and changes to the Open Coding Lab schedule by emailing join-rds-r-workshops@lists.wisc.edu. You will be automatically added to the list
+
+## R workshops for researchers
 UW-Madison libraries are offering R programming Workshops on R programming for researchers. The intended audience is anyone at the univerity who is working with tabular research data (including graduate students, faculty, research staff, and undergraduate researchers) and would like to learn how to automate data processing using the R programming language. The content is based heavily on the R Ecology Data Carpentry content, but will cover useful skills for anyone working with tabular data. Later sessions go beyone the Data Carpentry Lessons to cover how to use git version control within R Studio and writing reproducible reports using RMarkdown.
 
 ## Prerequisites
@@ -25,37 +28,44 @@ Registration is by workshop, not for the entire series. Please feel free to regi
 ## Schedule
 These workshops will be held biweekly on Fridays in Steenbock Classroom 105 at the University of Wisconsin-Madison unless otherwise noted. 
 
-Title | Date and Time | Registration Link
-------|-------------------------------|----------------------------------
-[R basics*](https://researchguides.library.wisc.edu/R/basics)|2/15/2019, 10 am - 12 pm | https://go.wisc.edu/o3g812
-[R basics*](https://researchguides.library.wisc.edu/R/basics)|2/19/2019, 2:30 - 4:30 pm | https://go.wisc.edu/tt6j51
-[R data wrangling](https://researchguides.library.wisc.edu/R/tidyverse)|3/01/2019, 10 am - 12 pm | https://go.wisc.edu/9rirbv 
-[R visualization](https://researchguides.library.wisc.edu/R/tidyverse)|3/15/2019, 10 am - 12 pm | https://go.wisc.edu/282iaj 
-[R version control](https://researchguides.library.wisc.edu/R/tidyverse)|3/29/2019, 10 am - 12 pm | https://go.wisc.edu/fdl6v8 
-[R reports](https://researchguides.library.wisc.edu/R/tidyverse)|4/12/2019, 10 am - 12 pm | https://go.wisc.edu/1o5o29
-
-/* These two events cover the same material. Please only sign up for 1 session to allow more people to learn this material.
+Title|Date|Instructor|Registration
+-----|----|----------|-------------
+[R basics](https://researchguides.library.wisc.edu/R/basics)|Friday 9/6/2019|Trisha Adamus|https://go.wisc.edu/43uh8r
+[R data wrangling](https://researchguides.library.wisc.edu/R/tidyverse)|Friday 9/20/2019|Tobin Magle|Opens 9/6/2019
+[R visualization](https://researchguides.library.wisc.edu/R/ggplot2)| Friday 9/27/2019|TBD| Opens 9/20/2019
+R text data|Friday 10/04/2019|Tobin Magle|Opens 9/20/2019
+R reports|Friday 10/18/2019|TBD|Opens 10/4/2-19
+R version control basics|Friday 10/25/2019|TBD|Opens 10/18/2019
+R version control for collaboration|Friday 11/1/2019|Sarah Stevens|Opens 10/25/2019
+Unix shell basics|Friday 11/15/2019|Tobin Magle|Opens 11/1/2019
+Using R in the shell|Friday 11/22/2019|Sarah Stevens|Opens 11/15/2019
 
 ## Content
 Below are descriptions of each workshop. Workshop slides and other content can be found [here](https://researchguides.library.wisc.edu/R)
 
 ### R basics
+Learning how to code can be intimidating, but will save you time and effort in the long run. This workshop will cover the basics of R programming. By the end of this session, you will be able to create variables, use pre-defined functions, understand data types and load and inspect a dataset using RStudio. This workshop is geared toward programming novices, so no previous experience is required.
 
-Learning how to code can be intimidating, but will save you time and effort in the long run. This workshop will cover the basics of R programming. By the end of this session, you will be able to create variables, use pre-defined functions, understand data types and load and inspect a dataset using RStudio. This workshop is geared toward programming novices, so no previous experience is required. 
-
-### R Data wrangling
-
-What you can do with your data depends strongly on how its formatted. This workshop will cover how to manipulate datasets using an R package called dplyr. After this session, you will be able to subset, reformat and summarize your data. A basic working knowledge of R and R studio would be helpful for you to get the most out of this session.
+### R data wrangling
+Data is rarely perfect out of the box. This workshop will cover how to manipulate datasets using an R package called dplyr. After this session, you will be able to select rows and columns, add new columns, remove missing data and create summary tables of your data. A basic working knowledge of R and R studio (functions, operators, data types) would be helpful for you to get the most out of this session.
 
 ### R data visualization
+So you're familiar with R, but want to do more with your plots than the base graphics package. This workshop will show you how to use the ggplot2 package in R. After this session, you will be able to create a variety of plot types, alter their aesthetics, and create custom themes. Prerequisites	A working knowledge of R and R studio and dplyr would be helpful for you to get the most out of this session.
 
-So you're familiar with R, but want to do more with your plots than the base graphics package. This workshop will show you how to use the ggplot2 package in R. After this session, you will be able to create a variety of plot types, alter their aesthetics, and create custom themes.
-Prerequisites	A working knowledge of R and R studio and dplyr would be helpful for you to get the most out of this session.
-
-### R version control
-
-We've all intuitively used some type of version control in our work such as saving multiple versions of a document. While easy, it can cause file bloat and ultimately become more complicated. Luckily, formal version control systems have been developed to streamline this process.This workshop will cover version control using git. After this session, you'll be able to create a git repository, make and add changes to the repository, and use GitHub to remotely store your repository.
+### R text data
+Collecting text data can be challenging, from interpreting free text fields, fixing misspellings, renaming categories, and separating columns that have multiple data fields in them. This workshop will show you how to use the forcats and stringr packages to deal with text data in R. A basic working knowledge of R and R studio, dplyr, and ggplot2 would be helpful for you to get the most out of this session.
 
 ### R reports
-
 Documenting your analysis in a way that is understandable to a colleague (or yourself 3 months later) can be challenging. One way to make reports more readable, even by people who don't code, is to alternate human readable text with machine readable code. This month's Coding and Cookies will cover creating reproducible reports of this type using knitr. After this session, you will be able to create R markdown documents, add formatted text and executable code blocks, and render the R markdown document into a final report.
+
+### R version control basics
+We've all intuitively used some type of version control in our work such as saving multiple versions of a document. While easy, it can cause file bloat and ultimately become more complicated. Luckily, formal version control systems have been developed to streamline this process.This workshop will cover version control using git. After this session, you'll be able to create a git repository, make and add changes to the repository, and use GitHub to remotely store your repository all from R studio.
+
+### R version control for collaboration
+Research doesn’t happen in a vacuum: collaboration on computational projects is becoming more and more common. Version control can be especially helpful in these collaborative situations. This workshop will cover how to use git (from RStudio) and GitHub to create branches of your projects locally, push these branches to Github, and create pull requests to shared repositories. A working knowledge of R, R studio, git, and GitHub would be helpful for you to get the most out of this session.
+
+### Unix shell basics
+You’re great at writing R scripts in R Studio, but now you’re ready to take it to the next level: using a supercomputer! Before you can take this leap, you’ll need to know how to use the shell. After this session, attendees will be able to navigate file directories, move and rename files, redirect shell output, and run scripts from the command line. 
+
+### Using R in the shell
+Congratulations! You’ve made it through the R workshop series. This final capstone session will tie together R, git, and the shell together into a computational workflow. After this session, attendees will be able to run R scripts from the command line, use version control to track changes in these scripts, and automate running R Markdown reports . A working knowledge of the R, the Unix shell, RMarkdown, and git would be helpful for you to get the most out of this session. 
