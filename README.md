@@ -30,6 +30,7 @@ These workshops will be held biweekly on Fridays in Steenbock Classroom 105 at t
 
 Title|Date|Instructor|Helpers|Registration
 -----|----|----------|-------|-------------
+[R basics](https://researchguides.library.wisc.edu/R/basics)|**Thursday** 9/5/2019|Tobin Magle|TBD|https://go.wisc.edu/00zpfk
 [R basics](https://researchguides.library.wisc.edu/R/basics)|Friday 9/6/2019|Tobin Magle|Sarah Stevens, Trisha Adamus, Nathaniel Grill, Heather Shimon|https://go.wisc.edu/43uh8r
 [R data wrangling](https://researchguides.library.wisc.edu/R/tidyverse)|Friday 9/20/2019|Trisha Adamus|Tobin Magle, Sarah Stevens, Trisha Adamus, Nathaniel Grill, Heather Shimon|Opens 9/6/2019
 [R visualization](https://researchguides.library.wisc.edu/R/ggplot2)| Friday 9/27/2019|Tobin Magle,| Sarah Stevens, Trisha Adamus, Nathaniel Grill, Heather Shimon|Opens 9/20/2019
