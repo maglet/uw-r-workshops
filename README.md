@@ -1,15 +1,3 @@
-# Summer 2019: Open Coding Lab
-
-UW-Libraries and the Data Science Hub will be hosting Open Coding Lab at Steenbock Library this summer. Use this time to work with your own data and get help from other coders. 
-
-The sessions will be on **Tuesdays from 2:30 pm to 4:30 pm** in the Biocommons Lounge on the first floor of **Steenbock Library**. See the schedule below for more details. (Schedule is subject to change)
-
-Date | Location | Host
------|--------- |--------
-8/13 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
-8/20 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
-8/27 | Biocommons Lounge (110C)| Tobin Magle and Sarah Stevens
-
 # Fall 2019: Workshops and Open Coding Lab
 We'll be holding an expanded R workshop series AND Open Coding Lab Fall 2019. The workshops will be held **Fridays 10am -12 pm** in Steenbock Computer classroom 105. Open Coding lab will be held **Tuesdays from 2:30 pm to 4:30 pm** in the Biocommons Lounge. 
 
