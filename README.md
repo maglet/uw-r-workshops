@@ -18,13 +18,13 @@ These workshops will be held biweekly on Fridays in Steenbock Classroom 105 at t
 
 Title|Date|Instructor|Helpers|Registration
 -----|----|----------|-------|-------------
-[R basics](https://researchguides.library.wisc.edu/R/basics)|**Thursday** 9/5/2019|Tobin Magle|Sarah Stevens|https://go.wisc.edu/00zpfk
+[R basics](https://researchguides.library.wisc.edu/R/basics)|**Thursday** 9/5/2019|Tobin Magle|Maria Kamenetsky, Sarah Stevens|https://go.wisc.edu/00zpfk
 [R basics](https://researchguides.library.wisc.edu/R/basics)|Friday 9/6/2019|Tobin Magle|Sarah Stevens, Trisha Adamus, Nathaniel Grill, Heather Shimon|https://go.wisc.edu/43uh8r
 [R data wrangling](https://researchguides.library.wisc.edu/R/tidyverse)|Friday 9/20/2019|Trisha Adamus|Tobin Magle, Sarah Stevens, Trisha Adamus, Nathaniel Grill, Heather Shimon|Opens 9/6/2019
 [R visualization](https://researchguides.library.wisc.edu/R/ggplot2)| Friday 9/27/2019|Tobin Magle,| Sarah Stevens, Trisha Adamus, Nathaniel Grill, Heather Shimon|Opens 9/20/2019
 R text data|Friday 10/04/2019|Sarah Stevens|Tobin Magle, Nathaniel Grill, Heather Shimon|Opens 9/20/2019
-[R reports](https://researchguides.library.wisc.edu/R/markdown)|Friday 10/18/2019|Tobin Magle|Sarah Stevens, Trisha Adamus, Nathaniel Grill, Heather Shimon|Opens 10/4/2019
-[R version control basics](https://researchguides.library.wisc.edu/R/git)|Friday 10/25/2019|Tobin Magle|Sarah Stevens, Nathaniel Grill|Opens 10/18/2019
+[R reports](https://researchguides.library.wisc.edu/R/markdown)|Friday 10/18/2019|Tobin Magle|Sarah Stevens, Trisha Adamus, Nathaniel Grill, Heather Shimon, Sailendharan Sudakaran|Opens 10/4/2019
+[R version control basics](https://researchguides.library.wisc.edu/R/git)|Friday 10/25/2019|Tobin Magle|Sarah Stevens, Nathaniel Grill, Sailendharan Sudakaran|Opens 10/18/2019
 R version control for collaboration|Friday 11/1/2019|Sarah Stevens|Tobin Magle, Maria Kamenetsky, Trisha Adamus, Nathaniel Grill|Opens 10/25/2019
 Unix shell basics|Friday 11/15/2019|Maria Kamenetsky|Tobin Magle, Sarah Stevens, Trisha Adamus, Nathaniel Grill|Opens 11/1/2019
 Using R in the shell|Friday 11/22/2019|Tobin Magle|Maria Kamenetsky, Sarah Stevens, Trisha Adamus, Nathaniel Grill|Opens 11/15/2019
