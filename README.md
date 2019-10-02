@@ -25,7 +25,7 @@ Title|Date|Instructor|Helpers|Registration
 [R data wrangling](https://researchguides.library.wisc.edu/R/tidyverse)|Friday 9/20/2019|Tobin Magle| Sarah Stevens, Heather Shimon|https://go.wisc.edu/33yu3w
 [R visualization](https://researchguides.library.wisc.edu/R/ggplot2)| Friday 9/27/2019|Tobin Magle,| Sarah Stevens, Trisha Adamus, Nathaniel Grill, Heather Shimon|https://go.wisc.edu/475j7k 
 R text data|Friday 10/04/2019|Sarah Stevens|Tobin Magle, Nathaniel Grill, Heather Shimon|https://go.wisc.edu/p4ex6x
-[R reports](https://researchguides.library.wisc.edu/R/markdown)|Friday 10/18/2019|Tobin Magle|Sarah Stevens, Trisha Adamus, Nathaniel Grill, Heather Shimon, Sailendharan Sudakaran|https://go.wisc.edu/0gos0m 
+[R reports](https://researchguides.library.wisc.edu/R/markdown)|Friday 10/18/2019|Tobin Magle|Sarah Stevens, Trisha Adamus, Nathaniel Grill, Sailendharan Sudakaran|https://go.wisc.edu/0gos0m 
 [R version control basics](https://researchguides.library.wisc.edu/R/git)|Friday 10/25/2019|Tobin Magle|Sarah Stevens, Nathaniel Grill, Sailendharan Sudakaran|https://go.wisc.edu/2a3p94
 R version control for collaboration|Friday 11/1/2019|Sarah Stevens|Tobin Magle, Maria Kamenetsky, Trisha Adamus, Nathaniel Grill|https://go.wisc.edu/s6qy7d
 Unix shell basics|Friday 11/15/2019|Maria Kamenetsky|Tobin Magle, Sarah Stevens, Trisha Adamus, Nathaniel Grill|https://go.wisc.edu/k618f3
