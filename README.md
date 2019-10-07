@@ -18,6 +18,9 @@ Registration is by workshop, not for the entire series. Please feel free to regi
 ## Schedule
 These workshops will be held biweekly on Fridays in Steenbock Classroom 105 at the University of Wisconsin-Madison unless otherwise noted. 
 
+## Content
+Workshp content, including previous sessions, can be found here: https://researchguides.library.wisc.edu/r
+
 Title|Date|Instructor|Helpers|Registration
 -----|----|----------|-------|-------------
 [R reports](https://researchguides.library.wisc.edu/R/markdown)|Friday 10/18/2019|Tobin Magle|Sarah Stevens, Trisha Adamus, Nathaniel Grill, Sailendharan Sudakaran|https://go.wisc.edu/0gos0m 
