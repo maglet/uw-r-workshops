@@ -28,7 +28,7 @@ Registration is by workshop, not for the entire series. Please feel free to regi
 These workshops will be held biweekly on Fridays in Steenbock Classroom 105 at the University of Wisconsin-Madison unless otherwise noted. 
 
 ## Content
-Workshp content, including previous sessions, can be found here: https://researchguides.library.wisc.edu/r
+Workshop content, including previous sessions, can be found here: https://researchguides.library.wisc.edu/r
 
 Title|Date|Instructor|Helpers|Registration
 -----|----|----------|-------|-------------
