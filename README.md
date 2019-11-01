@@ -3,7 +3,9 @@
 Ever wish you had coding buddies? Come meet like minded coders at Coding Meetup.
 
 **New name**: Coding meetup
+
 **New location**: Data Science Institute (1019 McArdle) 
+
 Same time: Tuesdays 2:30-4:30. 
 
 # Fall 2019: Workshops
