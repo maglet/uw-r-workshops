@@ -23,8 +23,6 @@ Workshp content, including previous sessions, can be found here: https://researc
 
 Title|Date|Instructor|Helpers|Registration
 -----|----|----------|-------|-------------
-[R reports](https://researchguides.library.wisc.edu/R/markdown)|Friday 10/18/2019|Tobin Magle|Sarah Stevens, Trisha Adamus, Sailendharan Sudakaran|https://go.wisc.edu/0gos0m 
-[R version control basics](https://researchguides.library.wisc.edu/R/git)|Friday 10/25/2019|Tobin Magle|Sarah Stevens, Nathaniel Grill, Sailendharan Sudakaran|https://go.wisc.edu/2a3p94
 R version control for collaboration|Friday 11/1/2019|Sarah Stevens|Tobin Magle, Maria Kamenetsky, Trisha Adamus, Nathaniel Grill|https://go.wisc.edu/s6qy7d
 Unix shell basics|Friday 11/15/2019|Maria Kamenetsky|Tobin Magle, Sarah Stevens, Trisha Adamus, Nathaniel Grill|https://go.wisc.edu/k618f3
 Using R in the shell|Friday 11/22/2019|Tobin Magle|Maria Kamenetsky, Sarah Stevens, Trisha Adamus, Nathaniel Grill|https://go.wisc.edu/r4a1rc
