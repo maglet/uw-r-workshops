@@ -32,8 +32,6 @@ Workshop content, including previous sessions, can be found here: https://resear
 
 Title|Date|Instructor|Helpers|Registration
 -----|----|----------|-------|-------------
-[R version control for collaboration](https://uw-madison-datascience.github.io/R-custom/07-r-version-control-for-collab/index.html)|Friday 11/1/2019|Sarah Stevens|Tobin Magle, Maria Kamenetsky, Trisha Adamus, Nathaniel Grill|https://go.wisc.edu/s6qy7d
-Unix shell basics|Friday 11/15/2019|Maria Kamenetsky|Tobin Magle, Sarah Stevens, Trisha Adamus, Nathaniel Grill|https://go.wisc.edu/k618f3
 Using R in the shell|Friday 11/22/2019|Tobin Magle|Maria Kamenetsky, Sarah Stevens, Trisha Adamus, Nathaniel Grill|https://go.wisc.edu/r4a1rc
 
 ## Content
