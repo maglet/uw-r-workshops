@@ -1,0 +1,51 @@
+---
+title: "Surveys Report"
+author: "Tobin Magle"
+date: "11/4/2019"
+output: html_document
+params:
+          file: data/complete_surveys.csv
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(knitr)
+
+surveys_complete<-read_csv(params$file)
+```
+
+# Small animal survey data
+
+This is the file: `r params$file`
+
+
+This is a survey of small animals from `r nlevels(as.factor(surveys_complete$plot_id))` plots
+from the years `r min(surveys_complete$year)` to `r max(surveys_complete$year)`. Each row is an animal. 
+Each column is an attribute of that animal. The variables recorded are `r names(surveys_complete)`.
+
+# Sex table
+Here is a breakdown of the number of female vs male animals observed in the study
+
+```{r, table, echo = FALSE}
+
+
+kable(surveys_complete%>%
+                group_by(sex)%>%
+                tally)
+```
+
+# Mean weight
+The mean weight of all animals surveyed 
+is `r mean(surveys_complete$weight, na.rm=TRUE)`.
+
+# Relationship between hindfoot length and weight
+We are interested in the relationship between weight and hindfoor length by species. Here is a graph.
+
+```{r graph, echo=FALSE, fig.cap="Fig 1: Weight vs. hindfoot length"}
+ggplot(data = surveys_complete, 
+       aes(x = weight, 
+           y = hindfoot_length, 
+           color = species_id)) + 
+geom_point(alpha = 0.1,
+           aes(color = species_id))
+```
