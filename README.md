@@ -6,6 +6,9 @@ UW-Madison libraries are offering R programming Workshops on R programming for r
 
 See https://researchguides.library.wisc.edu/R
 
+## Stay in the know. 
+Join our listserve to be kept up to date on new workshops and changes to the Open Coding Lab schedule by emailing join-rds-r-workshops@lists.wisc.edu. You will be automatically added to the list
+
 # Come-hang out-code
 
 Ever wish you had coding buddies? Come meet like minded coders at Coding Meetup.
@@ -16,10 +19,5 @@ Ever wish you had coding buddies? Come meet like minded coders at Coding Meetup.
 
 Same time: Tuesdays 2:30-4:30. 
 
-# Fall 2019: Workshops
-We'll be holding an expanded R workshop series
-* The workshops will be held **Fridays 10am -12 pm** in Steenbock Computer classroom 105.  
 
-## Stay in the know. 
-Join our listserve to be kept up to date on new workshops and changes to the Open Coding Lab schedule by emailing join-rds-r-workshops@lists.wisc.edu. You will be automatically added to the list
 
